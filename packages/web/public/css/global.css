@@ -269,3 +269,38 @@ html.tv .topic-list-title { font-size: 1rem; }
 @media (prefers-reduced-motion: reduce) {
   html.tv :focus-visible { transform: none; transition: none; }
 }
+
+/* On-screen keyboard (android TV has no soft keyboard for WebView inputs) */
+html.tv .tvkb {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 200;
+  padding: 2vh 4vw 3vh;
+  background: rgba(10, 10, 10, 0.97);
+  border-top: 1px solid var(--color-border);
+}
+html.tv .tvkb-row { display: flex; justify-content: center; gap: 0.5vw; margin-bottom: 0.6vh; }
+html.tv .tvkb-key {
+  min-width: 5.5vw;
+  padding: 1.1vh 0;
+  font-family: inherit;
+  font-size: 1.05rem;
+  color: var(--color-text-primary);
+  background: var(--color-bg-tertiary);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+}
+html.tv .tvkb-key.tvkb-wide { min-width: 11vw; }
+html.tv .tvkb-key.tvkb-on { background: var(--color-accent); color: #fff; }
+html.tv .tvkb-key:focus-visible {
+  outline: none;
+  border-color: #fff;
+  background: var(--color-accent);
+  color: #fff;
+  transform: scale(1.12);
+  box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.85);
+}
+/* Room to scroll the focused field clear of the keyboard */
+html.tv.tvkb-open { scroll-padding-bottom: 42vh; }

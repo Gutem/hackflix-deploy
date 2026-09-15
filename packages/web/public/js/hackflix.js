@@ -381,6 +381,14 @@ H.initTV = function () {
   document.documentElement.classList.add("tv");
   H.initSpatialNav();
 
+  // TV boxes never show a soft keyboard for WebView inputs, so ship one.
+  if (!document.querySelector('script[src*="tv-keyboard"]')) {
+    var kb = document.createElement("script");
+    kb.src = "/js/tv-keyboard.js";
+    kb.defer = true;
+    document.head.appendChild(kb);
+  }
+
   // Keep the D-pad focused element on screen.
   document.addEventListener("focusin", function (e) {
     var el = e.target;
