@@ -1,5 +1,8 @@
 FROM oven/bun:1-alpine
 
+# curl is required at runtime by the video/subtitle/image proxy
+RUN apk add --no-cache curl
+
 WORKDIR /app
 
 # Copy all workspace package.json files so bun can resolve cross-package deps
