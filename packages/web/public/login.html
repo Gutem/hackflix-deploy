@@ -74,10 +74,15 @@
     if (e.key === "Enter") document.getElementById("login-btn").click();
   });
 
-  // TV: focus the first field so the on-screen keyboard opens without a remote tap.
+  // TV: focus the first field and open the on-screen keyboard.
+  // Relying on the focusin listener alone is not enough — the WebView may
+  // have focused the field before the listener was attached.
   if (document.documentElement.classList.contains("tv")) {
     var userEl = document.getElementById("username");
-    if (userEl) userEl.focus();
+    if (userEl) {
+      userEl.focus();
+      if (window.HackflixTvKeyboard) window.HackflixTvKeyboard.show(userEl);
+    }
   }
 })();
 </script>
