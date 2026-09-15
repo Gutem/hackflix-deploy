@@ -209,3 +209,63 @@ h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; } h4 
 :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: var(--border-radius-sm); }
 :focus:not(:focus-visible) { outline: none; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ==========================================================================
+   Android TV / 10-foot UI
+   Activated by adding class "tv" to <html> — see Hackflix.initTV() in hackflix.js.
+   TVs are driven by a D-pad: there is no hover and no pointer, so every
+   hover-only affordance must be made permanent, and focus must be loud.
+   ========================================================================== */
+html.tv {
+  --content-padding-x: 5vw;   /* overscan-safe side gutters */
+  --tv-ring: #ffffff;
+  font-size: 18px;            /* legibility at ~3m */
+}
+
+/* Overscan: TVs crop the outer ~5% of the panel */
+html.tv .site-header { height: 92px; padding-left: 4vw; padding-right: 4vw; }
+html.tv .site-nav a { font-size: 0.95rem; padding: 0.6rem 1rem; }
+html.tv .main { padding-bottom: 6vh; }
+html.tv .letter-nav { top: 92px; }
+
+/* D-pad focus ring: the primary affordance on TV */
+html.tv :focus-visible {
+  outline: 3px solid var(--tv-ring);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 0 0 7px rgba(229, 9, 20, 0.9), 0 0 28px 8px rgba(229, 9, 20, 0.45);
+  transform: scale(1.06);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  position: relative;
+  z-index: 20;
+}
+/* Focused cards must clear their neighbours */
+html.tv .movie-card:focus-visible,
+html.tv .conf-card:focus-visible,
+html.tv .result-card:focus-visible { z-index: 30; }
+
+/* Nothing hovers on a TV: make hover-revealed content permanent */
+html.tv .movie-card:hover { transform: none; }
+html.tv .movie-card-overlay { opacity: 1; }
+html.tv .btn:hover, html.tv .view-all-link:hover { opacity: 1; }
+html.tv .conf-card:hover, html.tv .result-card:hover, html.tv .tag:hover { transform: none; }
+
+/* Bigger targets and type for a 10-foot viewing distance */
+html.tv .btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+html.tv .form-group label { font-size: 0.95rem; }
+html.tv .form-group input, html.tv .filter-bar input, html.tv .filter-bar select {
+  padding: 1rem; font-size: 1.05rem;
+}
+html.tv .search-input { padding: 1.1rem 1.35rem; font-size: 1.1rem; }
+html.tv .movie-card { min-width: 210px; }
+html.tv .conf-card { min-height: 200px; }
+html.tv .conf-card-info h3 { font-size: 1.1rem; }
+html.tv .carousel-title { font-size: 1.4rem; }
+html.tv .tag { padding: 0.6rem 1rem; font-size: 1rem; }
+html.tv .topic-list-item { padding: 1rem 1.25rem; }
+html.tv .topic-list-thumb { width: 56px; height: 56px; }
+html.tv .topic-list-title { font-size: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.tv :focus-visible { transform: none; transition: none; }
+}

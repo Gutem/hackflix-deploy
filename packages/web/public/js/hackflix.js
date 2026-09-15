@@ -363,3 +363,39 @@ function syncActiveNav() {
 }
 document.addEventListener("DOMContentLoaded", syncActiveNav);
 document.addEventListener("htmx:afterSettle", syncActiveNav);
+
+/**
+ * Android TV / 10-foot mode.
+ *
+ * Enabled by `?tv=1`, which the Tauri TV build launches with and which is
+ * then persisted. Desktop browsers do not get this: spatial navigation
+ * swallows the arrow keys, which would break normal keyboard scrolling.
+ */
+H.initTV = function () {
+  var params = new URLSearchParams(location.search);
+  if (params.get("tv") === "1") localStorage.setItem("hackflix_tv", "1");
+  if (params.get("tv") === "0") localStorage.removeItem("hackflix_tv");
+
+  if (localStorage.getItem("hackflix_tv") !== "1") return false;
+
+  document.documentElement.classList.add("tv");
+  H.initSpatialNav();
+
+  // Keep the D-pad focused element on screen.
+  document.addEventListener("focusin", function (e) {
+    var el = e.target;
+    if (!el || el === document.body) return;
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+    setTimeout(function () {
+      el.scrollIntoView({ block: "center", inline: "nearest", behavior: "smooth" });
+    }, 40);
+  }, true);
+
+  return true;
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () { H.initTV(); });
+} else {
+  H.initTV();
+}
