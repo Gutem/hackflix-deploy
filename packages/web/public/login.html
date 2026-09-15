@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hackflix — Login</title>
   <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script>
+    /* TV mode bootstrap — runs before paint so there is no layout flash.
+       The login page does not load hackflix.js, so it needs its own. */
+    (function () {
+      if (new URLSearchParams(location.search).get('tv') === '1') {
+        localStorage.setItem('hackflix_tv', '1');
+      }
+      if (localStorage.getItem('hackflix_tv') === '1') {
+        document.documentElement.classList.add('tv');
+      }
+    })();
+  </script>
 </head>
 <body>
 <div class="login-page">
