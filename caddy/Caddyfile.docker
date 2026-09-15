@@ -1,0 +1,12 @@
+# Hackflix — Docker Compose HTTPS proxy
+# Caddy inside Docker, services reachable by container name
+
+:8443 {
+  tls internal
+
+  # API backend
+  reverse_proxy /api/* backend:3001
+
+  # Astro frontend dev server
+  reverse_proxy frontend:4321
+}

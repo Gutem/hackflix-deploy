@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Conferences</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/">Início</a>
+    <a href="/conferences/" class="active">Conferências</a>
+    <a href="/documentaries/">Documentários</a>
+    <a href="/topic/">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="main">
+  <div class="conf-hero">
+    <h1>Arquivo de Conferências</h1>
+    <p>Palestras de segurança do mundo todo</p>
+  </div>
+  <div id="letter-nav" class="letter-nav"></div>
+  <div id="conf-grid" class="loading">Carregando...</div>
+  <script>
+(function () {
+  var H = window.Hackflix;
+  var navEl = document.getElementById("letter-nav");
+  var gridEl = document.getElementById("conf-grid");
+
+  async function load() {
+    try {
+      var auth = await H.authenticate().catch(function () { return null; });
+      if (!auth) return;
+      var res = await fetch("/api/conferences", { credentials: "include" });
+      if (res.status === 401) { window.location.href = "/login/"; return; }
+      var data = await res.json();
+      var confs = (data.conferences || data).filter(function (c) { return c.type !== "documentary"; });
+
+      if (!confs.length) {
+        gridEl.innerHTML = '<div class="empty"><h2>Nenhuma conferência</h2></div>';
+        return;
+      }
+
+      var groups = {};
+      confs.forEach(function (c) {
+        var name = c.name || c.slug || "";
+        var letter = /^[a-z]/i.test(name[0]) ? name[0].toUpperCase() : "#";
+        if (!groups[letter]) groups[letter] = [];
+        groups[letter].push(c);
+      });
+
+      var letters = Object.keys(groups).sort();
+      if (letters[letters.length - 1] === "#") { letters.pop(); letters.push("#"); }
+
+      navEl.innerHTML = '<div class="letter-nav-inner">' +
+        letters.map(function (l) { return '<a href="#letter-' + l + '" class="letter-link">' + l + '</a>'; }).join("") +
+        '</div>';
+
+      var html = "";
+      letters.forEach(function (letter) {
+        html += '<section id="letter-' + letter + '" class="letter-section">' +
+          '<h2 class="section-heading">' + letter + '</h2>' +
+          '<div class="conf-grid">';
+        groups[letter].forEach(function (c) {
+        html += '<a href="/conference/?slug=' + encodeURIComponent(c.slug) + '" class="conf-card">' +
+          (c.image ? '<span style="position:relative;width:64px;height:64px;flex-shrink:0"><div class="conf-icon" style="position:absolute;inset:0">' + H.escapeHtml((c.name || c.slug).charAt(0).toUpperCase()) + '</div><img class="conf-logo" src="' + c.image + '" alt="" loading="lazy" onload="this.style.opacity=\'1\'" onerror="this.style.display=\'none\'" style="opacity:0;position:absolute;inset:0"></span>' : '<div class="conf-icon">' + H.escapeHtml((c.name || c.slug).charAt(0).toUpperCase()) + '</div>') +
+          '<div class="conf-card-info">' +
+          '<h3>' + H.escapeHtml(c.name || c.slug) + '</h3>' +
+          (c.description ? '<p>' + H.escapeHtml(c.description) + '</p>' : '') +
+          '<span class="count">' + (c.count || 0) + ' palestras</span>' +
+          '</div></a>';
+        });
+        html += '</div></section>';
+      });
+
+      gridEl.innerHTML = html;
+      gridEl.classList.remove("loading");
+    } catch (e) {
+      gridEl.innerHTML = '<div class="error-state"><h1>Falha ao carregar</h1></div>';
+    }
+  }
+
+  load();
+})();
+  </script>
+</main>
+</body>
+</html>

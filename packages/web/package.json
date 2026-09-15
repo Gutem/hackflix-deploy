@@ -1,0 +1,12 @@
+{
+  "name": "@hackflix/web",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Use backend: bun run packages/backend/src/server.js'"
+  },
+  "devDependencies": {
+    "@hackflix/shared": "workspace:*"
+  }
+}

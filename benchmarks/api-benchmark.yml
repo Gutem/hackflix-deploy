@@ -1,0 +1,99 @@
+# Artillery load test for Hackflix API
+# Run: npx artillery run benchmarks/api-benchmark.yml
+
+config:
+  target: "http://localhost:3001"
+  phases:
+    - name: "warm-up"
+      duration: 10
+      arrivalRate: 1
+      rampTo: 5
+    - name: "load"
+      duration: 30
+      arrivalRate: 5
+      rampTo: 20
+  variables:
+    demo_token: "{{ $processEnvironment.DEMO_TOKEN }}"
+  ensure:
+    maxErrorRate: 5
+  processor: "./helpers.js"
+
+scenarios:
+  - name: "Anonymous health check"
+    weight: 1
+    flow:
+      - get:
+          url: "/health"
+          expect:
+            - statusCode: 200
+
+  - name: "User login"
+    weight: 2
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "demo"
+            password: "demo"
+          capture:
+            - json: "$.token"
+              as: "token"
+          expect:
+            - statusCode: 200
+      - get:
+          url: "/api/playlist"
+          headers:
+            Authorization: "Bearer {{ token }}"
+          expect:
+            - statusCode: 200
+      - get:
+          url: "/api/conferences"
+          headers:
+            Authorization: "Bearer {{ token }}"
+          expect:
+            - statusCode: 200
+
+  - name: "Content detail"
+    weight: 3
+    flow:
+      - get:
+          url: "/api/playlist"
+          headers:
+            Authorization: "Bearer {{ demo_token }}"
+          capture:
+            - json: "$.items[0].id"
+              as: "firstId"
+      - get:
+          url: "/api/content/{{ firstId }}"
+          headers:
+            Authorization: "Bearer {{ demo_token }}"
+          expect:
+            - statusCode: 200
+
+  - name: "Search"
+    weight: 2
+    flow:
+      - get:
+          url: "/api/search?q=security"
+          headers:
+            Authorization: "Bearer {{ demo_token }}"
+          expect:
+            - statusCode: 200
+
+  - name: "Conference content"
+    weight: 1
+    flow:
+      - get:
+          url: "/api/conferences/chaos-computer-club---congress/content"
+          headers:
+            Authorization: "Bearer {{ demo_token }}"
+          expect:
+            - statusCode: 200
+
+  - name: "Unauthenticated access (should 401)"
+    weight: 1
+    flow:
+      - get:
+          url: "/api/playlist"
+          expect:
+            - statusCode: 401

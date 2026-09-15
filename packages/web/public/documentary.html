@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Documentary</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/">Início</a>
+    <a href="/conferences/">Conferências</a>
+    <a href="/documentaries/">Documentários</a>
+    <a href="/topic/">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="main main-detail">
+  <div id="detail-content" class="loading">Carregando...</div>
+<script>
+(function () {
+  var H = window.Hackflix;
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get("slug");
+  var detailEl = document.getElementById("detail-content");
+
+  function renderCard(item) {
+    return H.renderCard(item, { showYear: true });
+  }
+
+  async function load() {
+    if (!slug) {
+      detailEl.innerHTML = '<div class="error"><p>Nenhum documentário especificado</p><a href="/documentaries/" class="btn">\u2190 Voltar</a></div>';
+      return;
+    }
+
+    try {
+      var auth = await H.authenticate().catch(function () { return null; });
+      if (!auth) return;
+      var res = await fetch("/api/conference/" + encodeURIComponent(slug), { credentials: "include" });
+      if (res.status === 401) { window.location.href = "/login/"; return; }
+      var data = await res.json();
+
+      if (!data || !data.items || !data.items.length) {
+        detailEl.innerHTML = '<div class="empty"><h2>Nenhum episódio encontrado</h2><a href="/documentaries/" class="btn">\u2190 Voltar</a></div>';
+        return;
+      }
+
+      var years = {};
+      data.items.forEach(function (item) {
+        var y = item.year || "Unknown";
+        if (!years[y]) years[y] = [];
+        years[y].push(item);
+      });
+
+      var sortedYears = Object.keys(years).sort().reverse();
+      var total = data.items.length;
+
+      var html = '<a href="/documentaries/" class="back-btn">\u2190 Voltar aos Documentários</a>' +
+        '<div class="conf-hero"><h1>' + H.escapeHtml(data.name || (data.conference && data.conference.name) || slug) + '<span class="heading-count">' + total + ' episódios</span></h1></div>';
+
+      sortedYears.forEach(function (year) {
+        var items = years[year];
+        html += '<section style="padding:0 var(--content-padding-x);margin-bottom:2rem">' +
+          '<h2 class="carousel-title">' + year + ' <span class="heading-count">' + items.length + '</span></h2>' +
+          '<div class="card-grid">' +
+          items.map(function (item) { return renderCard(item); }).join("") +
+          '</div></section>';
+      });
+
+      detailEl.innerHTML = html;
+      detailEl.classList.remove("loading");
+    } catch (e) {
+      detailEl.innerHTML = '<div class="error-state"><h1>Falha ao carregar</h1></div>';
+    }
+  }
+
+  load();
+})();
+</script></main>
+</body>
+</html>

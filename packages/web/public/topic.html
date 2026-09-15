@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Topics</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/">Início</a>
+    <a href="/conferences/">Conferências</a>
+    <a href="/documentaries/">Documentários</a>
+    <a href="/topic/" class="active">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="main">
+  <div id="topic-content" class="loading">Carregando...</div>
+<script>
+(function () {
+  var H = window.Hackflix;
+  var params = new URLSearchParams(window.location.search);
+  var selectedTag = params.get("q") || "";
+  var contentEl = document.getElementById("topic-content");
+
+  var viewMode = localStorage.getItem('topicView') || 'grid';
+
+  function renderCard(item) {
+    return H.renderCard(item, { showYear: true, showConference: true });
+  }
+
+  function renderListItem(item) {
+    var conf = H.escapeHtml(item.conference || '');
+    var year = item.year || '';
+    return '<a href="/watch/?id=' + encodeURIComponent(item.id) + '" class="topic-list-item">' +
+      '<span class="topic-list-thumb"><img src="' + H.escapeHtml(item.thumbnail || '') + '" alt="" loading="lazy" onerror="this.style.display=\'none\'"></span>' +
+      '<span class="topic-list-info"><span class="topic-list-title">' + H.escapeHtml(item.title || 'Untitled') + '</span>' +
+      '<span class="topic-list-meta">' + conf + (year ? ' · ' + year : '') + (item.duration ? ' · ' + item.duration + 'min' : '') + '</span></span>' +
+      '</a>';
+  }
+
+  function renderToggle() {
+    var gridActive = viewMode === 'grid' ? ' active' : '';
+    var listActive = viewMode === 'list' ? ' active' : '';
+    return '<span class="view-toggle">' +
+      '<button class="view-btn' + gridActive + '" data-view="grid" title="Grade" aria-label="Grade">&#x2587;&#x2583;</button>' +
+      '<button class="view-btn' + listActive + '" data-view="list" title="Lista" aria-label="Lista">&#x2261;</button>' +
+      '</span>';
+  }
+
+  async function load() {
+    try {
+      var auth = await H.authenticate().catch(function () { return null; });
+      if (!auth) return;
+      var res = await fetch("/api/content?limit=500", { credentials: "include" });
+      if (res.status === 401) { window.location.href = "/login/"; return; }
+      var data = await res.json();
+      var items = data.items || data.content || data || [];
+
+      var tagCounts = {};
+      items.forEach(function (item) {
+        (item.tags || []).forEach(function (tag) {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        });
+      });
+
+      var sorted = Object.entries(tagCounts).sort(function (a, b) { return b[1] - a[1]; });
+
+      if (selectedTag) {
+        var filtered = items.filter(function (item) {
+          return (item.tags || []).map(function (t) { return t.toLowerCase(); }).includes(selectedTag.toLowerCase());
+        });
+
+        var html = '<a href="/topic/" class="back-btn">\u2190 Todos os Tópicos</a>' +
+          '<div class="conf-hero"><div style="display:flex;justify-content:space-between;align-items:center"><h1 style="margin:0">' + H.escapeHtml(selectedTag) + '<span class="heading-count">' + filtered.length + ' palestras</span></h1>' + renderToggle() + '</div></div>';
+
+        if (filtered.length) {
+          html += '<section class="carousel-row"><div class="' + (viewMode === 'list' ? 'topic-list' : 'carousel-content') + '" style="' + (viewMode === 'list' ? '' : 'flex-wrap:wrap;overflow-x:visible') + '">' +
+            filtered.map(function (item) { return viewMode === 'list' ? renderListItem(item) : renderCard(item); }).join("") +
+            '</div></section>';
+        } else {
+          html += '<div class="empty" style="height:auto;padding:3rem"><h2>Nenhuma palestra para este tópico</h2></div>';
+        }
+
+        contentEl.innerHTML = html;
+        contentEl.classList.remove("loading");
+
+        var btns = contentEl.querySelectorAll('.view-btn');
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].onclick = function () {
+            viewMode = this.dataset.view;
+            localStorage.setItem('topicView', viewMode);
+            load();
+          };
+        }
+        return;
+      }
+
+      var html = '<div class="conf-hero"><h1>Tópicos</h1><p>Navegue por tópicos</p></div>' +
+        '<div class="conf-list">';
+      html += sorted.map(function (entry) {
+        var tag = entry[0], count = entry[1];
+        return '<a href="/topic/?q=' + encodeURIComponent(tag) + '" class="conf-list-item">' +
+          '<div><h3>' + H.escapeHtml(tag) + '</h3></div>' +
+          '<span class="count">' + count + ' palestras</span></a>';
+      }).join("");
+      html += '</div>';
+      contentEl.innerHTML = html;
+      contentEl.classList.remove("loading");
+    } catch (e) {
+      contentEl.innerHTML = '<div class="error-state"><h1>Falha ao carregar</h1></div>';
+    }
+  }
+
+  load();
+})();
+</script></main>
+</body>
+</html>

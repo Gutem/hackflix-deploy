@@ -1,0 +1,99 @@
+{
+  "name": "Hackflix Design System",
+  "version": "1.0.0",
+  "tokens": {
+    "colors": {
+      "bgPrimary": { "value": "#141414", "css": "--color-bg-primary", "usage": "Page background" },
+      "bgSecondary": { "value": "#1a1a1a", "css": "--color-bg-secondary", "usage": "Cards, inputs" },
+      "bgTertiary": { "value": "#2a2a2a", "css": "--color-bg-tertiary", "usage": "Hover states" },
+      "textPrimary": { "value": "#ffffff", "css": "--color-text-primary", "usage": "Headings, body text" },
+      "textSecondary": { "value": "#b3b3b3", "css": "--color-text-secondary", "usage": "Meta, labels, descriptions" },
+      "textMuted": { "value": "#808080", "css": "--color-text-muted", "usage": "Hint text, disabled" },
+      "accent": { "value": "#e50914", "css": "--color-accent", "usage": "Buttons, links, focus rings" },
+      "accentHover": { "value": "#f40612", "css": "--color-accent-hover", "usage": "Accent hover" },
+      "border": { "value": "#333333", "css": "--color-border", "usage": "Inputs, dividers" },
+      "overlay": { "value": "rgba(0, 0, 0, 0.7)", "css": "--color-overlay", "usage": "Overlays, backdrops" }
+    },
+    "typography": {
+      "fontPrimary": { "value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", "css": "--font-family-primary" },
+      "fontMono": { "value": "'JetBrains Mono', 'Fira Code', monospace", "css": "--font-family-mono" },
+      "sizes": {
+        "h1": "2.5rem (40px)", "h2": "1.5rem (24px)", "h3": "1.25rem (20px)",
+        "body": "1rem (16px)", "small": "0.85rem (13.6px)", "caption": "0.75rem (12px)"
+      }
+    },
+    "spacing": {
+      "xs": "0.25rem", "sm": "0.5rem", "md": "1rem",
+      "lg": "1.5rem", "xl": "2rem", "2xl": "3rem"
+    },
+    "radius": {
+      "sm": { "value": "4px", "css": "--border-radius-sm", "usage": "Buttons, inputs, tags" },
+      "md": { "value": "8px", "css": "--border-radius-md", "usage": "Cards, search bars" },
+      "lg": { "value": "12px", "css": "--border-radius-lg", "usage": "Images, avatars" }
+    },
+    "transitions": {
+      "fast": { "value": "150ms ease", "css": "--transition-fast", "usage": "Links, buttons" },
+      "normal": { "value": "300ms ease", "css": "--transition-normal", "usage": "Cards, overlays" }
+    },
+    "zIndex": {
+      "base": 0, "header": { "value": 100, "css": "--z-header" },
+      "overlay": { "value": 150, "css": "--z-overlay" },
+      "modal": { "value": 200, "css": "--z-modal" }
+    }
+  },
+  "components": [
+    {
+      "name": "MovieCard",
+      "description": "360px horizontal scroll card with overlay on hover",
+      "usedIn": ["Home page", "Topic page", "Search results"],
+      "props": { "width": "360px", "aspectRatio": "16/9", "gap": "0.5rem" }
+    },
+    {
+      "name": "ConferenceCard",
+      "description": "Logo + name + description card, fixed 178px height",
+      "usedIn": ["Conferences list"],
+      "props": { "height": "178px", "logo": "64px", "padding": "1.25rem", "titleLines": 2, "descLines": 4 }
+    },
+    {
+      "name": "PlaylistCard",
+      "description": "Conference video card with duration badge",
+      "usedIn": ["Conference detail", "CCC browse"],
+      "props": { "minWidth": "200px", "aspectRatio": "16/9", "infoHeight": "96px" }
+    },
+    {
+      "name": "SiteHeader",
+      "description": "Fixed top nav with logo + 5 nav items",
+      "usedIn": ["Layout (all pages)"],
+      "props": { "height": "60px", "padding": "1rem 3rem", "bg": "gradient to transparent" }
+    },
+    {
+      "name": "VideoPlayer",
+      "description": "16:9 video container, max 1200px wide",
+      "usedIn": ["Movie page", "Watch page"],
+      "props": { "maxWidth": "1200px", "aspectRatio": "16/9", "borderRadius": "8px" }
+    },
+    {
+      "name": "BackButton",
+      "description": "Context-aware text back link",
+      "usedIn": ["Movie page", "Watch page", "Conference detail"],
+      "props": { "color": "#b3b3b3", "fontSize": "0.9rem", "hoverColor": "#fff" }
+    },
+    {
+      "name": "SectionHeading",
+      "description": "Red underlined section title",
+      "usedIn": ["Global"],
+      "props": { "color": "#e50914", "borderBottom": "2px solid #e50914", "fontSize": "1.5rem", "fontWeight": 700 }
+    }
+  ],
+  "pages": [
+    { "route": "/", "name": "Home", "components": ["Hero", "ContinueWatching", "NewAdditions", "Topics"] },
+    { "route": "/conferences", "name": "Conferences", "components": ["LetterNav", "ConferenceCard grid"] },
+    { "route": "/conference/?slug=", "name": "Conference Detail", "components": ["Header+logo", "PlaylistGrid", "SortDropdown"] },
+    { "route": "/topic", "name": "Topics", "components": ["Topic rows", "ViewAll grid"] },
+    { "route": "/movie/?id=", "name": "Movie", "components": ["VideoPlayer", "Controls", "Details"] },
+    { "route": "/watch/?id=", "name": "Watch", "components": ["VideoPlayer", "BackButton"] },
+    { "route": "/search", "name": "Search", "components": ["SearchInput", "ResultCards"] },
+    { "route": "/login", "name": "Login", "components": ["LoginCard"] },
+    { "route": "/profile", "name": "Profile", "components": ["UserInfo", "ContentAccess"] }
+  ]
+}

@@ -1,0 +1,51 @@
+# Hackflix — local dev with HTTPS via Caddy
+# docker compose up
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./caddy/Caddyfile.docker:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - backend
+      - frontend
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: packages/backend/Dockerfile
+    environment:
+      - NODE_ENV=development
+      - DATA_DIR=/data
+      - FRONTEND_URL=https://localhost:8443
+      - PUBLIC_URL=https://localhost:8443
+    volumes:
+      - ./packages/ingest/data:/data
+      - ./packages/backend/src:/app/packages/backend/src
+      - ./packages/shared:/app/packages/shared
+      - ./packages/workers/src:/app/packages/workers/src
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: packages/web/Dockerfile
+    environment:
+      - PUBLIC_API_URL=https://localhost:8443
+    volumes:
+      - ./packages/web/src:/app/packages/web/src
+      - ./packages/web/public:/app/packages/web/public
+    ports:
+      - "4321:4321"
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:

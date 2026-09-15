@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Documentaries</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/">Início</a>
+    <a href="/conferences/">Conferências</a>
+    <a href="/documentaries/" class="active">Documentários</a>
+    <a href="/topic/">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="main">
+  <div class="conf-hero">
+    <h1>Documentários</h1>
+    <p>Documentários de segurança e histórias dos bastidores</p>
+  </div>
+  <div id="doc-grid" class="loading">Carregando...</div>
+  <script>
+(function () {
+  var H = window.Hackflix;
+  var gridEl = document.getElementById("doc-grid");
+
+  async function load() {
+    try {
+      var auth = await H.authenticate().catch(function () { return null; });
+      if (!auth) return;
+      var res = await fetch("/api/conferences", { credentials: "include" });
+      if (res.status === 401) { window.location.href = "/login/"; return; }
+      var data = await res.json();
+      var docs = (data.conferences || data).filter(function (c) { return c.type === "documentary"; });
+
+      if (!docs.length) {
+        gridEl.innerHTML = '<div class="empty"><h2>Nenhum documentário</h2></div>';
+        gridEl.classList.remove("loading");
+        return;
+      }
+
+      var html = '<div class="conf-grid" style="padding:0 3rem">';
+      docs.forEach(function (c) {
+        html += '<a href="/documentary/?slug=' + encodeURIComponent(c.slug) + '" class="conf-card">' +
+          (c.image ? '<span style="position:relative;width:64px;height:64px;flex-shrink:0"><div class="conf-icon" style="position:absolute;inset:0">' + H.escapeHtml((c.name || c.slug).charAt(0).toUpperCase()) + '</div><img class="conf-logo" src="' + c.image + '" alt="" loading="lazy" onload="this.style.opacity=\'1\'" onerror="this.style.display=\'none\'" style="opacity:0;position:absolute;inset:0"></span>' : '<div class="conf-icon">' + H.escapeHtml((c.name || c.slug).charAt(0).toUpperCase()) + '</div>') +
+          '<div class="conf-card-info"><h3>' + H.escapeHtml(c.name || c.slug) + '</h3>' +
+          (c.description ? '<p>' + H.escapeHtml(c.description) + '</p>' : '') +
+          '<span class="count">' + (c.count || 0) + ' episódios</span>' +
+          '</div></a>';
+      });
+      html += '</div>';
+
+      gridEl.innerHTML = html;
+      gridEl.classList.remove("loading");
+    } catch (e) {
+      gridEl.innerHTML = '<div class="error-state"><h1>Falha ao carregar</h1></div>';
+    }
+  }
+
+  load();
+})();
+  </script>
+</main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "categories": [
+    { "id": "action", "name": "Action & Adventure", "slug": "action" },
+    { "id": "comedy", "name": "Comedy", "slug": "comedy" },
+    { "id": "crime", "name": "Crime", "slug": "crime" },
+    { "id": "documentary", "name": "Documentary", "slug": "documentary" },
+    { "id": "drama", "name": "Drama", "slug": "drama" },
+    { "id": "horror", "name": "Horror", "slug": "horror" },
+    { "id": "romance", "name": "Romance", "slug": "romance" },
+    { "id": "sci-fi", "name": "Sci-Fi", "slug": "sci-fi" },
+    { "id": "thriller", "name": "Thriller", "slug": "thriller" }
+  ]
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Watch</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/hls.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/">Início</a>
+    <a href="/conferences/">Conferências</a>
+    <a href="/documentaries/">Documentários</a>
+    <a href="/topic/">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="watch-content">
+  <div id="watch-content">
+    <div id="player-container" class="video-container">
+      <div class="loading">Carregando...</div>
+    </div>
+    <div id="info" class="info"></div>
+  </div>
+<script>
+(function () {
+  var H = window.Hackflix;
+  var urlParams = new URLSearchParams(window.location.search);
+  var id = urlParams.get("id");
+
+  async function fetchContent() {
+    if (!id) return null;
+    var res = await fetch("/api/content/" + encodeURIComponent(id), { credentials: "include" });
+    if (res.status === 401) { window.location.href = "/login/"; return null; }
+    if (!res.ok) return null;
+    return res.json();
+  }
+
+  function render(content) {
+    var playerContainer = document.getElementById("player-container");
+    var infoContainer = document.getElementById("info");
+    var backUrl = "/";
+    var backLabel = "Voltar";
+    try {
+      var ref = document.referrer && new URL(document.referrer);
+      if (ref && ref.host === location.host) {
+        if (ref.pathname.startsWith("/conference/")) {
+          var refSlug = new URLSearchParams(ref.search).get("slug");
+          backUrl = "/conference/?slug=" + encodeURIComponent(refSlug || "");
+          if (content && content.conference) backLabel = content.conference;
+        } else if (ref.pathname.startsWith("/documentary/")) {
+          var refSlug = new URLSearchParams(ref.search).get("slug");
+          backUrl = "/documentary/?slug=" + encodeURIComponent(refSlug || "");
+          if (content && content.conference) backLabel = content.conference;
+        } else if (ref.pathname === "/conferences/" || ref.pathname === "/conferences") {
+          backUrl = "/conferences/";
+          backLabel = "Conferências";
+        } else if (ref.pathname === "/documentaries/" || ref.pathname === "/documentaries") {
+          backUrl = "/documentaries/";
+          backLabel = "Documentários";
+        } else if (ref.pathname === "/topic/" || ref.pathname === "/topic") {
+          backUrl = "/topic/";
+          backLabel = "Tópicos";
+        }
+      }
+    } catch {}
+
+    if (!content) {
+      playerContainer.innerHTML = '<div class="error"><p>Conteúdo indisponível</p><p style="color:#999;font-size:0.9rem">This content may require a premium subscription.</p><a href="/" class="btn">\u2190 Voltar ao Início</a></div>';
+      return;
+    }
+
+    if (content.source === "youtube" && content.videoUrl) {
+      var vidId = content.videoUrl.split("v=")[1];
+      if (vidId) vidId = vidId.split("&")[0];
+      var embedHtml = vidId
+        ? '<div style="position:relative;padding-top:56.25%"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube-nocookie.com/embed/' + vidId + '?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>'
+        : '<div class="error">URL do YouTube inválida</div>';
+      playerContainer.innerHTML = embedHtml;
+    } else if (content.videoUrl) {
+      var poster = H.getThumbnailUrl(content.poster || content.thumbnail, content.title);
+      var subs = content.subtitlesByLanguage;
+      var tracksHtml = "";
+      if (subs) {
+        tracksHtml = Object.entries(subs).map(function (entry) {
+          var lang = entry[0], url = entry[1];
+          var proxyUrl = "/api/subtitles?url=" + encodeURIComponent(url);
+          return '<track kind="subtitles" crossorigin="use-credentials" src="' + proxyUrl + '" srclang="' + lang + '" label="' + lang.toUpperCase() + '" default>';
+        }).join("");
+      }
+
+      playerContainer.innerHTML = '<video id="video-player" controls autoplay poster="' + poster + '">' + tracksHtml + '</video>';
+
+      var video = document.getElementById("video-player");
+      H.initVideo(video, content.videoUrl, content.source, content.id);
+      video.play().catch(function () {});
+
+      var lastSave = 0;
+      video.addEventListener("timeupdate", function () {
+        var now = Date.now();
+        if (now - lastSave < 5000) return;
+        lastSave = now;
+        H.trackWatchProgress(id, content.title, content.thumbnail || content.poster || "", Math.floor(video.currentTime), Math.floor(video.duration || 0));
+      });
+    } else {
+      playerContainer.innerHTML = '<div class="fallback"><p>Vídeo indisponível</p>' +
+        (content.frontendUrl ? '<a href="' + content.frontendUrl + '" target="_blank" class="btn btn-accent">Assistir em ' + H.escapeHtml(content.source) + '</a>' : "") +
+        '</div>';
+    }
+
+    var backBtn = document.createElement("a");
+    backBtn.href = backUrl;
+    backBtn.className = "back-btn";
+    backBtn.style.marginLeft = "0";
+    backBtn.textContent = "\u2190 " + backLabel;
+    playerContainer.parentNode.insertBefore(backBtn, playerContainer);
+
+    // Fix infocon data: title/speaker sometimes swapped
+    if (content.speakers && content.speakers.length === 1 && content.title) {
+      var looksLikeName = content.title.length < 50 && !/[:\/\-]/.test(content.title);
+      var hasVideoExt = /\.(mp4|webm|mkv|avi|mov|flv|wmv)$/i.test(content.title);
+      var speakerLonger = content.speakers[0].length > content.title.length;
+      if ((looksLikeName || hasVideoExt) && (speakerLonger || hasVideoExt)) {
+        var realTitle = content.speakers[0];
+        var realSpeaker = content.title.replace(/\.\w+$/i, '');
+        content.title = realTitle;
+        content.speakers = [realSpeaker];
+      }
+    }
+
+    var durText = content.duration ? content.duration + ' min' : '';
+    infoContainer.innerHTML = '<h1>' + H.escapeHtml(content.title) + '</h1>' +
+      '<div class="meta">' + [content.year, durText, H.escapeHtml(content.conference || content.source)].filter(Boolean).join(' \u2022 ') + '</div>' +
+      (content.speakers && content.speakers.length ? '<div class="speakers">' + content.speakers.map(function (s) { return H.escapeHtml(s); }).join(", ") + '</div>' : "") +
+      (content.description ? '<div class="description">' + H.escapeHtml(content.description) + '</div>' : "") +
+      (function () { var visibleTags = (content.tags || []).filter(function (t) { return t !== content.conference; }); return visibleTags.length ? '<div class="tags">' + visibleTags.map(function (t) { return '<span class="tag">' + H.escapeHtml(t) + '</span>'; }).join("") + '</div>' : ''; })()
+  }
+
+  async function init() {
+    if (!id) {
+      document.getElementById("player-container").innerHTML = '<div class="error"><p>Sem conteúdo specified</p><a href="/" class="btn">\u2190 Voltar ao Início</a></div>';
+      return;
+    }
+    try { await H.authenticate(); } catch { return; }
+    try {
+      var content = await fetchContent();
+      render(content);
+    } catch (e) {
+      document.getElementById("player-container").innerHTML = '<div class="error"><p>Falha ao carregar</p></div>';
+    }
+  }
+
+  init();
+})();
+</script></main>
+</body>
+</html>

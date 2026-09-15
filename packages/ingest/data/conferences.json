@@ -1,0 +1,1795 @@
+{
+  "metadata": {
+    "lastUpdate": "2026-08-08T00:00:00.000Z",
+    "total": 255
+  },
+  "conferences": [
+    {
+      "name": "0xcon",
+      "slug": "0xcon",
+      "path": "0xcon/",
+      "description": "Started in 2017. \"0xCON is a local infosec conference aimed towards building the Gauteng and ZA community. We welcome both experienced and new speakers alike, and work hard to keep things free and open to everyone. Details about us are at https://0xcon.co.za, and we have a history of past talks at https://0xcon.co.za/history.html\"",
+      "image": "https://infocon.org/cons/0xcon/0xCON%20Logo.jpg"
+    },
+    {
+      "name": "2600",
+      "slug": "2600",
+      "path": "2600/",
+      "description": "Organized by 2600, Hackers On Planet Earth (HOPE) happens every two years. Starting in 2025 HOPE is moving to yearly.",
+      "image": "https://infocon.org/cons/2600/2600%20logo.png"
+    },
+    {
+      "name": "44CON",
+      "slug": "44con",
+      "path": "44CON/",
+      "description": "44CON is an annual Information Security Conference and Training event taking place in London, United Kingdom",
+      "image": "https://infocon.org/cons/44CON/44CON%20logo.gif"
+    },
+    {
+      "name": "8dot8",
+      "slug": "8dot8",
+      "path": "8dot8/",
+      "description": "\"Esta conferencia no es una feria más con un objetivo comercial, al contrario, es un evento 100% técnico que tiene como principal objetivo compartir información, democratizar el conocimiento y crear comunidad.",
+      "image": "https://infocon.org/cons/8dot8/8dot8%20logo.jpg"
+    },
+    {
+      "name": "ACK Security Conference",
+      "slug": "ack-security-conference",
+      "path": "ACK%20Security%20Conference/",
+      "description": "Held in 2012 in Columbia this InfoSec conference seems to have been a one off event. Links are dead to the original web site, and the organizer (?) now seems to promote security consulting services.",
+      "image": "https://infocon.org/cons/ACK%20Security%20Conference/ACK%20Security%20Conference%20logo.jpg"
+    },
+    {
+      "name": "ACoD",
+      "slug": "acod",
+      "path": "ACoD/",
+      "description": "ACoD GOALS: Push the art to a science: Creating a professional discipline. To mature our practice, we need to be able to share our methodologies in a systematic and consistent way.",
+      "image": null
+    },
+    {
+      "name": "AIDE",
+      "slug": "aide",
+      "path": "AIDE/",
+      "description": null,
+      "image": "https://infocon.org/cons/AIDE/AIDE%20logo.jpeg"
+    },
+    {
+      "name": "AirGap",
+      "slug": "airgap",
+      "path": "AirGap/",
+      "description": "AirGap 2020 was a free virtual conference bought to you by ThugCrowd. It was streamed live to Twitch on the 2nd of May 2020 to your personal sandbox with a focus on weird bugs and unconventional approaches to offensive security.",
+      "image": "https://infocon.org/cons/AirGap/Thug%20Crowd%20AirGap%20logo.jpg"
+    },
+    {
+      "name": "Android Security Symposium",
+      "slug": "android-security-symposium",
+      "path": "Android%20Security%20Symposium/",
+      "description": "\"The second Android Security Symposium will take place in Vienna, Austria, from 8-10 March 2017.",
+      "image": "https://infocon.org/cons/Android%20Security%20Symposium/Android%20Security%20Symposium%20logo5.png"
+    },
+    {
+      "name": "ANYCon",
+      "slug": "anycon",
+      "path": "ANYCon/",
+      "description": "Albany New York Hacking, InfoSec & Cyber Security Conference",
+      "image": "https://infocon.org/cons/ANYCon/ANYCon%20logo.jpg"
+    },
+    {
+      "name": "ArchC0N",
+      "slug": "archc0n",
+      "path": "ArchC0N/",
+      "description": "ArchCON was a premiere InfoSec con held in Saint Louis, MO. ArchCON was focused on maintaining a small community feel, but big on speaker quality.",
+      "image": "https://infocon.org/cons/ArchC0N/ArchC0N%20logo%20wide.jpg"
+    },
+    {
+      "name": "Area41",
+      "slug": "area41",
+      "path": "Area41/",
+      "description": "\"Established in 2010 under the original name hashdays, Area41 is Switzerland's most well-known technical information security conference. Every two years, international speakers present cutting-edge research from a variety of fields, ranging from software vulnerabilities and malware research to threat hunting and offensive security practices. Area41 attracts a diverse crowd of information security professionals, technical managers, as well as students and enthusiasts interested in the field.\"",
+      "image": "https://infocon.org/cons/Area41/A41%20logo.jpg"
+    },
+    {
+      "name": "AthCon",
+      "slug": "athcon",
+      "path": "AthCon/",
+      "description": "AthCon ran for four years, 2010 to 2013",
+      "image": "https://infocon.org/cons/AthCon/athcon%202010%20logo.jpg"
+    },
+    {
+      "name": "AtlSecCon",
+      "slug": "atlseccon",
+      "path": "AtlSecCon/",
+      "description": "The Atlantic Security Conference (AtlSecCon) is a non-profit, annual, information security conference located in Halifax, Nova Scotia, Canada. Established in 2011, our goal is to provide quality information security education and training at an affordable cost.",
+      "image": "https://infocon.org/cons/AtlSecCon/AltSecCon%20logo.png"
+    },
+    {
+      "name": "ATT&CKcon",
+      "slug": "att&ckcon",
+      "path": "ATT%26CKcon/",
+      "description": "MITRE ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. The ATT&CK knowledge base is used as a foundation for the development of specific threat models and methodologies in the private sector, in government, and in the cybersecurity product and service community.",
+      "image": "https://infocon.org/cons/ATT%26CKcon/ATT%26CK%20logo.png"
+    },
+    {
+      "name": "AusCERT",
+      "slug": "auscert",
+      "path": "AusCERT/",
+      "description": null,
+      "image": "https://infocon.org/cons/AusCERT/AusCERT%20logo-1.jpg"
+    },
+    {
+      "name": "AVTOKYO",
+      "slug": "avtokyo",
+      "path": "AVTOKYO/",
+      "description": "\"AVTOKYO is the Japanese community oriented Computer Security Short Conference.",
+      "image": "https://infocon.org/cons/AVTOKYO/AVTOKYO%20logo%20small.png"
+    },
+    {
+      "name": "BalCCon",
+      "slug": "balccon",
+      "path": "BalCCon/",
+      "description": "\"Our major goal is to gather all the communities from the region and abroad so we can socialize, hack, play, learn, exchange knowledge and experience and of course, party together.",
+      "image": "https://infocon.org/cons/BalCCon/BalCCon%20logo.png"
+    },
+    {
+      "name": "BBS Documentary",
+      "slug": "bbs-documentary",
+      "path": "bbs-documentary/",
+      "description": "BBS: The Documentary — 8-episode series by Jason Scott (TEXTFILES.COM). Over 250 hours of interviews documenting the BBS era (1970s-1990s): the first BBSes, SysOps, Fidonet, ANSI art scene, hacking BBSes, and the rise of the Internet. Includes 158 raw interview recordings.",
+      "image": "https://archive.org/download/bbsdocumentary/__ia_thumb.jpg",
+      "type": "documentary"
+    },
+    {
+      "name": "BeerCon",
+      "slug": "beercon",
+      "path": "BeerCon/",
+      "description": "\"In 2019, The Beer Farmers hosted BeerCon1 - a marathon event attracting many well known speakers to chat with us for charity. In 2020, in the midst of a pandemic, we hosted BeerCon2: Rise of The Rookie - giving many first time speakers their shot at the limelight.",
+      "image": "https://infocon.org/cons/BeerCon/BeerCon%20logo.jpg"
+    },
+    {
+      "name": "Black Alps",
+      "slug": "black-alps",
+      "path": "Black%20Alps/",
+      "description": "Black Alps is a non-profit organization founded in 2017 whose main event will be the organization of Black Alps conferences in Switzerland.",
+      "image": "https://infocon.org/cons/Black%20Alps/Black%20Alps%20logo.jpg"
+    },
+    {
+      "name": "Black Hat",
+      "slug": "black-hat",
+      "path": "Black%20Hat/",
+      "description": "https://en.wikipedia.org/wiki/Black_Hat_Briefings",
+      "image": "https://infocon.org/cons/Black%20Hat/Black%20Hat%20Logo%20small.jpg"
+    },
+    {
+      "name": "BloomCON",
+      "slug": "bloomcon",
+      "path": "BloomCON/",
+      "description": "\"BloomCON Forensics and Security conference at Bloomsburg University in Kehr Union, PA (USA)\" Started in 2016, it looks like those materials are missing.",
+      "image": "https://infocon.org/cons/BloomCON/BloomCON%20logo.jpg"
+    },
+    {
+      "name": "BlueHat",
+      "slug": "bluehat",
+      "path": "BlueHat/",
+      "description": "Blue Hat is a Microsoft internal security conference organized by the Microsoft Security Response Center (MSRC). Traditionally held in Redmond, Washington but since 2017 also held in Israel and 2024 in India.",
+      "image": "https://infocon.org/cons/BlueHat/BlueHat%20logo.png"
+    },
+    {
+      "name": "BodyHacking",
+      "slug": "bodyhacking",
+      "path": "BodyHacking/",
+      "description": "\"BodyHacking Con, or BDYHAX (�BodyHacks�) for short, is an annual convention in Austin, TX about bringing the maker/hacker/diy ethos to our own bodies, it's about treating the body as a system, understanding it, and making it do what you want. We focus on what's happening right now and in the next 2 years and include wearables, cybernetics and prosthetics, AR & VR, nootropics, as well as fitness techniques and body modification.\"",
+      "image": "https://infocon.org/cons/BodyHacking/BDYHAX%20logo.png"
+    },
+    {
+      "name": "BornHack",
+      "slug": "bornhack",
+      "path": "BornHack/",
+      "description": "\"BornHack is a 7 day outdoor tent camp where hackers, makers and people with an interest in technology or security come together to celebrate technology, socialise, learn and have fun.\" Started in 2016",
+      "image": "https://infocon.org/cons/BornHack/bornhack%20logo%20tent.jpg"
+    },
+    {
+      "name": "Botconf",
+      "slug": "botconf",
+      "path": "Botconf/",
+      "description": "Started in 2013",
+      "image": "https://infocon.org/cons/Botconf/Botconf%20logo.png"
+    },
+    {
+      "name": "BrrCon",
+      "slug": "brrcon",
+      "path": "BrrCon/",
+      "description": "\"BrrCon is a FREE cyber security training conference with the mission to facilitate knowledge sharing, network with peers and improve capabilities within the cyber security community. BrrCon is funded exclusively by regional businesses and there will be no sponsor booths or vendor pitches.\"",
+      "image": "https://infocon.org/cons/BrrCon/BrrCon%20logo.png"
+    },
+    {
+      "name": "BruCON",
+      "slug": "brucon",
+      "path": "BruCON/",
+      "description": "\"Organized in Belgium, BruCON is an annual security conference providing two days of an interesting atmosphere for open discussions of critical infosec issues, privacy, information technology and its cultural/technical implications on society....\"",
+      "image": "https://infocon.org/cons/BruCON/BruCON%20logo.jpg"
+    },
+    {
+      "name": "BSides Boston",
+      "slug": "bsides-boston",
+      "path": "BSides%20Boston/",
+      "description": "BSides Boston security conference",
+      "image": null
+    },
+    {
+      "name": "BSidesNYC",
+      "slug": "bsidesnyc",
+      "path": "BSidesNYC/",
+      "description": "BSides New York City security conference",
+      "image": null
+    },
+    {
+      "name": "BSidesSF",
+      "slug": "bsidessf",
+      "path": "BSidesSF/",
+      "description": "BSides San Francisco security conference",
+      "image": null
+    },
+    {
+      "name": "c0c0n",
+      "slug": "c0c0n",
+      "path": "c0c0n/",
+      "description": "\"Organized by Information Security Research Association in India. c0c0n, previously known as Cyber Safe, is an annual event conducted as part of the International Information Security Day.\"",
+      "image": "https://infocon.org/cons/c0c0n/c0c0n%20logo.png"
+    },
+    {
+      "name": "CackalackyCon",
+      "slug": "cackalackycon",
+      "path": "CackalackyCon/",
+      "description": "Started in 2019 and held in Chapel Hill North Carolina, USA",
+      "image": "https://infocon.org/cons/CackalackyCon/CackalackyCon%20logo.png"
+    },
+    {
+      "name": "CactusCon",
+      "slug": "cactuscon",
+      "path": "CactusCon/",
+      "description": "\"Arizona's largest information security (infosec) conference.\"",
+      "image": "https://infocon.org/cons/CactusCon/CactusCon%202023%2011%20logo.jpg"
+    },
+    {
+      "name": "CarolinaCon",
+      "slug": "carolinacon",
+      "path": "CarolinaCon/",
+      "description": "\"CarolinaCon was started in 2005 and has been held every year since. With each passing year the conference continues to grow and attract more attendees and speakers. As has always been the case, CarolinaCon is put together and run by an all-volunteer staff. CarolinaCon is proudly brought to you by \"The CarolinaCon Group\". The CarolinaCon Group is dedicated to educating the local and global communities about technology, information/network/computer security, and information rights.\"",
+      "image": "https://infocon.org/cons/CarolinaCon/CarolinaCon%20logo.jpg"
+    },
+    {
+      "name": "CERIAS",
+      "slug": "cerias",
+      "path": "CERIAS/",
+      "description": "Note: I have started to include the related course videos besides just the main conference videos.",
+      "image": "https://infocon.org/cons/CERIAS/CERIAS%20logo.jpg"
+    },
+    {
+      "name": "Chaos Computer Club - Camp",
+      "slug": "chaos-computer-club---camp",
+      "path": "Chaos%20Computer%20Club%20-%20Camp/",
+      "description": "\"The Chaos Communication Camp is an international, five-day open-air event for hackers and associated life-forms. It provides a relaxed atmosphere for free exchange of technical, social, and political ideas. The camp has everything you need: power, internet, food and fun. Bring your tent and participate!\"",
+      "image": "https://infocon.org/cons/Chaos%20Computer%20Club%20-%20Camp/CCC%20Camp%202023%20Logo.jpg"
+    },
+    {
+      "name": "Chaos Computer Club - Congress",
+      "slug": "chaos-computer-club---congress",
+      "path": "Chaos%20Computer%20Club%20-%20Congress/",
+      "description": "The Chaos Computer Club (CCC) is Europe's largest association of hackers. The CCC is based in Germany and other German-speaking countries. [From WikiPedia]",
+      "image": "https://infocon.org/cons/Chaos%20Computer%20Club%20-%20Congress/CCC%20logo.jpg"
+    },
+    {
+      "name": "Chaos Computer Club - CryptoCon",
+      "slug": "chaos-computer-club---cryptocon",
+      "path": "Chaos%20Computer%20Club%20-%20CryptoCon/",
+      "description": null,
+      "image": "https://infocon.org/cons/Chaos%20Computer%20Club%20-%20CryptoCon/CCC%20logo.jpg"
+    },
+    {
+      "name": "Chaos Computer Club - Easterhegg",
+      "slug": "chaos-computer-club---easterhegg",
+      "path": "Chaos%20Computer%20Club%20-%20Easterhegg/",
+      "description": "2023 was the 20th Easterhegg!",
+      "image": "https://infocon.org/cons/Chaos%20Computer%20Club%20-%20Easterhegg/CCC%20logo.jpg"
+    },
+    {
+      "name": "Chaos Computer Club - FireShonks",
+      "slug": "chaos-computer-club---fireshonks",
+      "path": "Chaos%20Computer%20Club%20-%20FireShonks/",
+      "description": null,
+      "image": null
+    },
+    {
+      "name": "Chaos Computer Club - PrivacyWeek",
+      "slug": "chaos-computer-club---privacyweek",
+      "path": "Chaos%20Computer%20Club%20-%20PrivacyWeek/",
+      "description": null,
+      "image": "https://infocon.org/cons/Chaos%20Computer%20Club%20-%20PrivacyWeek/CCC%20logo.jpg"
+    },
+    {
+      "name": "Chaos Computer Club - SIGINT",
+      "slug": "chaos-computer-club---sigint",
+      "path": "Chaos%20Computer%20Club%20-%20SIGINT/",
+      "description": "The SIGINT conference was a three-day conference held yearly on the social and technical aspects of digital society between 2009 and 2013. It was organized by the Chaos Computer Club and held in Cologne, Germany. The conference featured both lectures and workshops on various different topics. It specifically wanted to focus on the social and political aspect of technology and hacker culture. The conference was officially discontinued in January 2014.",
+      "image": "https://infocon.org/cons/Chaos%20Computer%20Club%20-%20SIGINT/CCC%20logo.jpg"
+    },
+    {
+      "name": "CharruaCon",
+      "slug": "charruacon",
+      "path": "CharruaCon/",
+      "description": "A conference held in Montevideo, Uruguay. Looks like it started in 2017.",
+      "image": "https://infocon.org/cons/CharruaCon/CharruaCon%20logo.jpg"
+    },
+    {
+      "name": "CHCon",
+      "slug": "chcon",
+      "path": "CHCon/",
+      "description": "\"CHCon is a conference for security professionals and hackers in Christchurch, NZ.\"",
+      "image": "https://infocon.org/cons/CHCon/CHCon%20logo%202022.jpg"
+    },
+    {
+      "name": "CircleCityCon",
+      "slug": "circlecitycon",
+      "path": "CircleCityCon/",
+      "description": "Held in Indianapolis, IN (The Circle City), USA",
+      "image": "https://infocon.org/cons/CircleCityCon/CircleCityCon%2010%20logo.webp"
+    },
+    {
+      "name": "CitySec",
+      "slug": "citysec",
+      "path": "CitySec/",
+      "description": null,
+      "image": "https://infocon.org/cons/CitySec/MAYhem%20logo.png"
+    },
+    {
+      "name": "Cloud Native SecurityCon",
+      "slug": "cloud-native-securitycon",
+      "path": "Cloud%20Native%20SecurityCon/",
+      "description": "\"CNCF is the open source, vendor-neutral hub of cloud native computing, hosting projects like Kubernetes and Prometheus to make cloud native universal and sustainable.\"",
+      "image": "https://infocon.org/cons/Cloud%20Native%20SecurityCon/Cloud%20Native%20logo.jpg"
+    },
+    {
+      "name": "CODE BLUE",
+      "slug": "code-blue",
+      "path": "CODE%20BLUE/",
+      "description": "\"CODE BLUE was started in 2013 in Tokyo, Japan International Security Conference World leading security researchers will come together for this unique international conference in Tokyo 世界トップクラスのセキュリティ専門家による日本発の情報セキュリティ国際会議の動画チャンネル\"",
+      "image": "https://infocon.org/cons/CODE%20BLUE/Code%20Blue%20logo.jpg"
+    },
+    {
+      "name": "COIS",
+      "slug": "cois",
+      "path": "COIS/",
+      "description": null,
+      "image": null
+    },
+    {
+      "name": "ComfyCon AU",
+      "slug": "comfycon-au",
+      "path": "ComfyCon%20AU/",
+      "description": "\"Cyber without leaving your isolation tank\" held in Australia.",
+      "image": "https://infocon.org/cons/ComfyCon%20AU/ComfyCon%202024%20logo.jpg"
+    },
+    {
+      "name": "CONFidence",
+      "slug": "confidence",
+      "path": "CONFidence/",
+      "description": "\"The biggest hackers� and IT security experts� meeting in Poland\" Looks like they were acquired by PROIDEA Conferences.",
+      "image": "https://infocon.org/cons/CONFidence/CONFidence%20logo.jpg"
+    },
+    {
+      "name": "conINT",
+      "slug": "conint",
+      "path": "conINT/",
+      "description": "\"Virtual Intelligence Conference and CTF benefitting @NCPTF8\"",
+      "image": "https://infocon.org/cons/conINT/conINT%20logo.jpg"
+    },
+    {
+      "name": "ConVerge",
+      "slug": "converge",
+      "path": "ConVerge/",
+      "description": "Held in Detroit, Michigan, USA",
+      "image": "https://infocon.org/cons/ConVerge/ConVerge%20Logo.png"
+    },
+    {
+      "name": "CornCon",
+      "slug": "corncon",
+      "path": "CornCon/",
+      "description": "Started in 2014 \"CornCon is a Quad Cities Cybersecurity Conference and Kids Hacker Camp. It is held annually in the fall in Davenport, Iowa.\"",
+      "image": "https://infocon.org/cons/CornCon/CornCon%201%20logo.jpg"
+    },
+    {
+      "name": "COUNTERMEASURE",
+      "slug": "countermeasure",
+      "path": "COUNTERMEASURE/",
+      "description": "Started in 2011 \"Taking place annually in Ottawa, COUNTERMEASURE was designed with an emphasis on IT security matters from a federal government perspective.\"",
+      "image": "https://infocon.org/cons/COUNTERMEASURE/COUNTERMEASURE%20logo.png"
+    },
+    {
+      "name": "CrikeyCon",
+      "slug": "crikeycon",
+      "path": "CrikeyCon/",
+      "description": "Started in 2014 \"CrikeyCon is an annual community-led conference targeting those with an interest in information security around South East Queensland (Australia) and beyond.",
+      "image": "https://infocon.org/cons/CrikeyCon/CrikeyCon%202015%20logo.jpg"
+    },
+    {
+      "name": "CyberCamp",
+      "slug": "cybercamp",
+      "path": "CyberCamp/",
+      "description": "\"El Instituto Nacional de Ciberseguridad de España (INCIBE), sociedad dependiente del Ministerio de Asuntos Económicos y Transformación Digital a través de la Secretaría de Estado de Digitalización e Inteligencia Artificial, es la entidad de referencia para el desarrollo de la ciberseguridad y de la confianza digital de los ciudadanos, la red académica y de investigación española (RedIRIS) y las empresas, especialmente para sectores estratégicos.\"",
+      "image": "https://infocon.org/cons/CyberCamp/CyberCamp%20logo-1.png"
+    },
+    {
+      "name": "CyberChess",
+      "slug": "cyberchess",
+      "path": "CyberChess/",
+      "description": "\"For over a decade, the CyberChess Conference has been a cornerstone cybersecurity event in the Baltic region, bringing together a diverse community of experts - including cybersecurity specialists, policymakers, internet and telecommunications providers, industry leaders, and enthusiasts.\"",
+      "image": "https://infocon.org/cons/CyberChess/CERT.LV%20logo.jpg"
+    },
+    {
+      "name": "CYBERWARCON",
+      "slug": "cyberwarcon",
+      "path": "CYBERWARCON/",
+      "description": "Started in 2018 \"CYBERWARCON is a one-day conference in Arlington, VA focused on the specter of destruction, disruption, and malicious influence on our society through cyber capabilities. CYBERWARCON is not a hacker conference, or an ICS conference, or an international policy conference. The central purpose of this conference is to identify and explore threats. Participants and attendees come from a spectrum of backgrounds, including the military and government, academia, the media, and the private sector.\"",
+      "image": "https://infocon.org/cons/CYBERWARCON/CYBERWARCON%20logo.jpg"
+    },
+    {
+      "name": "CyCon",
+      "slug": "cycon",
+      "path": "CyCon/",
+      "description": "Two different event locations. The first conference held in Estonia is CyCon NATO CCDCOE. The second was held in the US and was CyCon US. After 2019 CyCon US stoped, with the NATO conference continuing.",
+      "image": null
+    },
+    {
+      "name": "CypherCon",
+      "slug": "cyphercon",
+      "path": "CypherCon/",
+      "description": "CypherCon is Wisconsin's largest technology conference, an annual cybersecurity summit & hacker conference held in Milwaukee, Wisconsin that provides anyone with a passion for technology and hackers with an outlet to openly demonstrate and experience creativity and ingenuity through hands-on enlightening activities, thought provoking presentations and technical projects. Join us each spring!",
+      "image": "https://infocon.org/cons/CypherCon/CypherCon%20logo%20icon.png"
+    },
+    {
+      "name": "DakotaCon",
+      "slug": "dakotacon",
+      "path": "DakotaCon/",
+      "description": "Held in Madison, South Dakota. Join us for three full days of talks and trainings from the finest peeps in the security world! Come enjoy the benefits of a small conference where you won't get lost in the crowd and you get time to interact directly with the speakers and your security peers. Attending the talks on Friday is FREE, so you have no excuse!",
+      "image": "https://infocon.org/cons/DakotaCon/DakotaCon%20logo.jpg"
+    },
+    {
+      "name": "DeepSec",
+      "slug": "deepsec",
+      "path": "DeepSec/",
+      "description": "Held in Vienna, Austria. \"Bringing together the world's most renowned security professionals from academics, government, industry, and the underground hacking community.\"",
+      "image": "https://infocon.org/cons/DeepSec/DeepSec%20logo.png"
+    },
+    {
+      "name": "DefCamp",
+      "slug": "defcamp",
+      "path": "DefCamp/",
+      "description": "\"DefCamp is the most important conference on Hacking & Information Security in Central Eastern Europe. The goal is bringing hands-on talks about latest research and practices from the INFOSEC field, gathering under the same roof security specialists, entrepreneurs, academic, private and public sectors.\"",
+      "image": "https://infocon.org/cons/DefCamp/DefCamp%20logo.jpg"
+    },
+    {
+      "name": "DefensiveCon",
+      "slug": "defensivecon",
+      "path": "DefensiveCon/",
+      "description": "\"Die DefensiveCon v02 findet in diesem Frühjahr zum zweiten Mal in Berlin statt. An zwei Tagen kommen Interessierte zusammen, die sich im Fokus der Cyber-Sicherheitspolitik mit aktiver Cyberabwehr, defensiver Cybersicherheit und der Resilienz von kritischen Infrastrukturen (KRITIS), sowie dem Umgang mit den dabei eingesetzten Technologien und deren Auswirkungen auf unsere Gesellschaft, Politik und Gesetze befassen wollen. \"",
+      "image": "https://infocon.org/cons/DefensiveCon/DefensiveCon%20logo.jpg"
+    },
+    {
+      "name": "DerbyCon",
+      "slug": "derbycon",
+      "path": "DerbyCon/",
+      "description": "NOTE: DerbyCon 9 was their final conference.",
+      "image": "https://infocon.org/cons/DerbyCon/DerbyCon%20Logo.jpg"
+    },
+    {
+      "name": "DevSecCon",
+      "slug": "devseccon",
+      "path": "DevSecCon/",
+      "description": "\"Making development and delivery more secure, without compromise.\"",
+      "image": "https://infocon.org/cons/DevSecCon/DevSecCon%20logo.jpg"
+    },
+    {
+      "name": "Diana Initiative",
+      "slug": "diana-initiative",
+      "path": "Diana%20Initiative/",
+      "description": "\"The Diana Initiative Is a 501c3 non profit charity focused on Women, Diversity, and Inclusion in Information Security that embraces all genders, sexualities, and skill levels.",
+      "image": "https://infocon.org/cons/Diana%20Initiative/Diana%20Initiative%20logo.jpg"
+    },
+    {
+      "name": "Digital Overdose",
+      "slug": "digital-overdose",
+      "path": "Digital%20Overdose/",
+      "description": "\"Digital Overdose is a community focused around information security, cybersecurity, ethical hacking and tech in general, that aims to provide a space where anyone can join, discuss and interact on topics they are fond of.\"",
+      "image": "https://infocon.org/cons/Digital%20Overdose/Digital%20Overdose%20logo.jpg"
+    },
+    {
+      "name": "Disobey",
+      "slug": "disobey",
+      "path": "Disobey/",
+      "description": "A hacking conference in Helsinki Finland started in 2016",
+      "image": "https://infocon.org/cons/Disobey/Disobey%20logo.png"
+    },
+    {
+      "name": "DistrictCon",
+      "slug": "districtcon",
+      "path": "DistrictCon/",
+      "description": "DistrictCon is a DC hacker con, focusing on hacking together and exchanging ideas over typical talk tracks.",
+      "image": "https://infocon.org/cons/DistrictCon/DistrictCon%201%20logo.webp"
+    },
+    {
+      "name": "DNS-OARC",
+      "slug": "dns-oarc",
+      "path": "DNS-OARC/",
+      "description": "\"The DNS Operations, Analysis, and Research Center (DNS-OARC) brings together key operators, implementors, and researchers on a trusted platform so they can coordinate responses to attacks and other concerns, share information and learn together.\"",
+      "image": "https://infocon.org/cons/DNS-OARC/DNS-OARC%20logo.jpg"
+    },
+    {
+      "name": "DojoCon",
+      "slug": "dojocon",
+      "path": "DojoCon/",
+      "description": "It looks like DoJo Con was a one off event held in 2010",
+      "image": null
+    },
+    {
+      "name": "DragonJAR",
+      "slug": "dragonjar",
+      "path": "DragonJAR/",
+      "description": "\"Hackers hispanohablantes compartir�n contigo el conocimiento adquirido en sus proyectos de investigaci�n en seguridad inform�tica.",
+      "image": "https://infocon.org/cons/DragonJAR/DragonJAR%202018%20logo.png"
+    },
+    {
+      "name": "Dutch Hacker Camps",
+      "slug": "dutch-hacker-camps",
+      "path": "Dutch%20Hacker%20Camps/",
+      "description": "Dutch Hacker Camps",
+      "image": "https://infocon.org/cons/Dutch%20Hacker%20Camps/Galactic%20Hacker%20Party%20(GHP89)%20logo.webp"
+    },
+    {
+      "name": "Ekoparty",
+      "slug": "ekoparty",
+      "path": "Ekoparty/",
+      "description": "Este es el canal oficial de ekoparty security conference www.ekoparty.org La eko se realiza anualmente en la Ciudad Aut�noma de Buenos Aires. En este evento, asistentes, invitados, especialistas y referentes en la materia de todo el mundo, tienen la oportunidad de involucrarse con las m�s recientes innovaciones tecnol�gicas, vulnerabilidades y herramientas, en un ambiente distendido y de intercambio de conocimientos. Actualmente es la conferencia de seguridad inform�tica m�s importante de Am�rica Latina.",
+      "image": "https://infocon.org/cons/Ekoparty/Ekoparty%20logo.png"
+    },
+    {
+      "name": "Electromagnetic Field",
+      "slug": "electromagnetic-field",
+      "path": "Electromagnetic%20Field/",
+      "description": "\"Electromagnetic Field (EMF) is a non-profit UK camping festival for those with an inquisitive mind or an interest in making things: hackers, geeks, scientists, engineers, artists, and crafters.\"",
+      "image": "https://infocon.org/cons/Electromagnetic%20Field/EMF%202016%20logo.png"
+    },
+    {
+      "name": "End Summer Camp",
+      "slug": "end-summer-camp",
+      "path": "End%20Summer%20Camp/",
+      "description": "\"ESC è un incontro non-profit di persone interessate all'Hacking, al Software Libero e al DIY. Il contenuto dell'evento è in continua evoluzione e viene creato dai suoi partecipanti.\" Held in Italy.",
+      "image": "https://infocon.org/cons/End%20Summer%20Camp/ESC%20logo%20small.png"
+    },
+    {
+      "name": "eth0",
+      "slug": "eth0",
+      "path": "eth0/",
+      "description": "\"eth0 organizes conferences that aim at bringing people with different computer-related interests together for an informative time and truckloads of fun.\"",
+      "image": "https://infocon.org/cons/eth0/eth0-logo.png"
+    },
+    {
+      "name": "Financial Cryptography",
+      "slug": "financial-cryptography",
+      "path": "Financial%20Cryptography/",
+      "description": "\"IFCA is the International Financial Cryptography Association, which organizes the Financial Cryptography and Data Security conference, held annually since 1997.\"",
+      "image": "https://infocon.org/cons/Financial%20Cryptography/IFCA%20Logo%201.gif"
+    },
+    {
+      "name": "FIRST",
+      "slug": "first",
+      "path": "FIRST/",
+      "description": "\"FIRST is the premier organization and recognized global leader in incident response. Membership in FIRST enables incident response teams to more effectively respond to security incidents reactive as well as proactive.",
+      "image": "https://infocon.org/cons/FIRST/FIRST%20logo.jpg"
+    },
+    {
+      "name": "FOSDEM",
+      "slug": "fosdem",
+      "path": "FOSDEM/",
+      "description": "\"FOSDEM is a two-day event organised by volunteers to promote the widespread use of free and open source software. Taking place in the beautiful city of Brussels (Belgium), FOSDEM is widely recognised as the best such conference in Europe.\"",
+      "image": "https://infocon.org/cons/FOSDEM/FOSDEM%20logo.jpg"
+    },
+    {
+      "name": "FSec",
+      "slug": "fsec",
+      "path": "FSec/",
+      "description": "\"Currently FSec is the biggest, vendor neutral technical information security symposium in Croatia.\" Started in 2011.",
+      "image": "https://infocon.org/cons/FSec/FSec%20logo.png"
+    },
+    {
+      "name": "GLOBSEC",
+      "slug": "globsec",
+      "path": "GLOBSEC/",
+      "description": "\"GLOBSEC is a global think-tank based in Bratislava committed to enhancing security, prosperity and sustainability in Europe and throughout the world. Its mission is to influence the future by generating new ideas and solutions for a better and safer world. We believe we can change the world by putting together the right stakeholders at the right time for a free exchange of ideas.\"",
+      "image": "https://infocon.org/cons/GLOBSEC/GLOBSEC%20logo.jpg"
+    },
+    {
+      "name": "Grayhat",
+      "slug": "grayhat",
+      "path": "Grayhat/",
+      "description": "NOTE: This conference was run by the same folks that do the Texas Cyber Summit",
+      "image": "https://infocon.org/cons/Grayhat/Grayhat%20logo.jpg"
+    },
+    {
+      "name": "GreHack",
+      "slug": "grehack",
+      "path": "GreHack/",
+      "description": "GreHack is an international security conference. It aims to bring together academia, industry, government, students and hackers.",
+      "image": "https://infocon.org/cons/GreHack/GreHack%20logo.png"
+    },
+    {
+      "name": "GRIMMCon",
+      "slug": "grimmcon",
+      "path": "GRIMMCon/",
+      "description": "GRIMM provides tailored cybersecurity research, development, testing, training, and consulting services. Our practices build on operational experience in cyber mission support for national defense as well as business and service improvement.",
+      "image": "https://infocon.org/cons/GRIMMCon/GRIMMCon%207%20logo.png"
+    },
+    {
+      "name": "GrrCON",
+      "slug": "grrcon",
+      "path": "GrrCON/",
+      "description": "\"GrrCON is an information security and hacking conference that provides the Midwest InfoSec community with a fun atmosphere to come together and engage with like minded people. We keep GrrCON small with around 1,000 attendance to allow us to provide those things other events leave out. Whether you are a Fortune 500 executive, security researcher, industry professional, student, or a hacker of “flexible” morals you will find something for you at GrrCON.",
+      "image": "https://infocon.org/cons/GrrCON/GrrCON%20Logo.png"
+    },
+    {
+      "name": "H@cktivityCon",
+      "slug": "h@cktivitycon",
+      "path": "H%40cktivityCon/",
+      "description": "H@activitycon, run by Hacker 0x01, changed into Security@ starting in 2023.",
+      "image": "https://infocon.org/cons/H%40cktivityCon/hacktivitycon-logo.png"
+    },
+    {
+      "name": "Hack In Paris",
+      "slug": "hack-in-paris",
+      "path": "Hack%20In%20Paris/",
+      "description": "Note: Ended in 2022?",
+      "image": "https://infocon.org/cons/Hack%20In%20Paris/Hack%20In%20Paris%20logo.jpg"
+    },
+    {
+      "name": "Hack In The Box",
+      "slug": "hack-in-the-box",
+      "path": "Hack%20In%20The%20Box/",
+      "description": "\"Held annually in Kuala Lumpur, Malaysia and Amsterdam in The Netherlands, HITBSecConf is a platform for the discussion and dissemination of next generation computer security issues.\"",
+      "image": "https://infocon.org/cons/Hack%20In%20The%20Box/hitb%20logo.png"
+    },
+    {
+      "name": "Hack In The Random",
+      "slug": "hack-in-the-random",
+      "path": "Hack%20In%20The%20Random/",
+      "description": "Hack In The Random 2600 NL series.",
+      "image": "https://infocon.org/cons/Hack%20In%20The%20Random/Hack%20In%20The%20Random%20Data%20logo.jpg"
+    },
+    {
+      "name": "Hack.lu",
+      "slug": "hack.lu",
+      "path": "Hack.lu/",
+      "description": "Hack.lu is an open convention/conference where people can discuss about computer security, privacy, information technology and its cultural/technical implication on society, held in Luxembourg, organized by circl.lu. 2024 was their 19th year.",
+      "image": "https://infocon.org/cons/Hack.lu/hack.lu%20logo%202015.png"
+    },
+    {
+      "name": "Hack3rCon",
+      "slug": "hack3rcon",
+      "path": "Hack3rCon/",
+      "description": "NOTE: Hack3rcon was merged with SecureWV in 2016",
+      "image": "https://infocon.org/cons/Hack3rCon/Hack3rCon%20logo.jpg"
+    },
+    {
+      "name": "Hackaday",
+      "slug": "hackaday",
+      "path": "Hackaday/",
+      "description": "Hackaday serves up Fresh Hacks Every Day from around the Internet. Our playful posts are the gold-standard in entertainment for engineers and engineering enthusiasts.",
+      "image": "https://infocon.org/cons/Hackaday/Hackaday%20logo.jpg"
+    },
+    {
+      "name": "Hacker Hotel",
+      "slug": "hacker-hotel",
+      "path": "Hacker%20Hotel/",
+      "description": "\"Hacker Hotel provides a luxurious hacking experience. This event is exclusively aimed at hackers and makers, with workshops and lectures in all skill levels which are provided by attendees.\" Held in the Netherlands.",
+      "image": "https://infocon.org/cons/Hacker%20Hotel/HackerHotel%20logo.jpg"
+    },
+    {
+      "name": "Hackers 2 Hackers",
+      "slug": "hackers-2-hackers",
+      "path": "Hackers%202%20Hackers/",
+      "description": "Hackers To Hackers Conference (H2HC) é uma conferência organizada por pessoas que trabalham ou que estão diretamente envolvidas com pesquisas e desenvolvimento na área de segurança da informação, cujo principal objetivo é permitir a disseminação, discussão e a troca de conhecimento sobre segurança da informação entre os participantes e também entre as empresas envolvidas no evento. Com treinamentos e palestras apresentadas por membros respeitados do mundo corporativo, grupos de pesquisas e comunidade underground, neste ano a conferência novamente demonstrará técnicas que nunca foram vistas ou discutidas com o público anteriormente.",
+      "image": "https://infocon.org/cons/Hackers%202%20Hackers/Hackers%202%20Hackers%20Conference%20logo.jpg"
+    },
+    {
+      "name": "Hackfest",
+      "slug": "hackfest",
+      "path": "Hackfest/",
+      "description": "\"Hackfest is a community of both experts and enthusiasts of computer security. The annual event of the same name, brings together over 650 people and is the main activity of the organization. Hackfest has a provincial radius of eastern Canada meaning more than half of the participants come from outside the region of Quebec. Hackfest includes other projects such as the monthly HackerSpace, Podcast, blog, projects and more.\" Hackfest 15 was held in 2023.",
+      "image": "https://infocon.org/cons/Hackfest/Hackfest%20logo.jpg"
+    },
+    {
+      "name": "HackInBo",
+      "slug": "hackinbo",
+      "path": "HackInBo/",
+      "description": "\"HackInBo � il primo evento totalmente gratuito sulla Sicurezza Informatica nella citt� di Bologna.\" Held in Bologna, Italy. Started in 2014.",
+      "image": "https://infocon.org/cons/HackInBo/HackInBo%20logo.jpg"
+    },
+    {
+      "name": "Hackito Ergo Sum",
+      "slug": "hackito-ergo-sum",
+      "path": "Hackito%20Ergo%20Sum/",
+      "description": "The last conference I can find was held in 2015.",
+      "image": "https://infocon.org/cons/Hackito%20Ergo%20Sum/Hackito%20Ergo%20Sum%20Logo.jpg"
+    },
+    {
+      "name": "HackMiami",
+      "slug": "hackmiami",
+      "path": "HackMiami/",
+      "description": "\"HackMiami is a formal organization of information security professionals who host the annual international hacker conference that takes place in Miami Beach, FL ... The organization also organizes bi-weekly local events themed around ethical hacking topics throughout South Florida, and offer information security consultation services to both individuals and businesses.\"",
+      "image": "https://infocon.org/cons/HackMiami/HackMaimi%20logo.jpg"
+    },
+    {
+      "name": "Hacktivity",
+      "slug": "hacktivity",
+      "path": "Hacktivity/",
+      "description": "\"The IT Security Festival in Central and Eastern Europe since 2004\"",
+      "image": "https://infocon.org/cons/Hacktivity/Hacktivity%20logo.png"
+    },
+    {
+      "name": "HackWest",
+      "slug": "hackwest",
+      "path": "HackWest/",
+      "description": null,
+      "image": "https://infocon.org/cons/HackWest/HackWest%20logo.png"
+    },
+    {
+      "name": "hardwear.io",
+      "slug": "hardwear.io",
+      "path": "hardwear.io/",
+      "description": "Hardware Security Conference and Training held in the Netherlands",
+      "image": "https://infocon.org/cons/hardwear.io/hardwear.io%20logo%20large.png"
+    },
+    {
+      "name": "Hash Days",
+      "slug": "hash-days",
+      "path": "Hash%20Days/",
+      "description": "NOTES: #days is now over, with the last conference held in 2012. It has been replaced with a new conference, \"area41\", by the same organizers. #days ran from 2010 to 2012.",
+      "image": "https://infocon.org/cons/Hash%20Days/Hash%20Days%20logo.png"
+    },
+    {
+      "name": "HCPP",
+      "slug": "hcpp",
+      "path": "HCPP/",
+      "description": "\"Paraleln� Polis is a one�of�a-kind nonprofit organization that brings together art, social sciences, and modern technologies. The ideas of liberty, independence, and innovative thinking and development of society are the main underlying foundations the whole project is built upon.\"",
+      "image": "https://infocon.org/cons/HCPP/HCCP-Polis%20logo%20flat.png"
+    },
+    {
+      "name": "HEXACON",
+      "slug": "hexacon",
+      "path": "HEXACON/",
+      "description": "\"Hexacon is your new rendez-vous among Offensive Security events. We strive to provide you heavy-hitting technical content, along with an enjoyable community-oriented experience in Paris.\"",
+      "image": "https://infocon.org/cons/HEXACON/HEXACON%20logo.jpg"
+    },
+    {
+      "name": "HITCON",
+      "slug": "hitcon",
+      "path": "HITCON/",
+      "description": "Since 2005 Taiwan's Premiere conference.",
+      "image": "https://infocon.org/cons/HITCON/HITCON%20logo.jpg"
+    },
+    {
+      "name": "HouSecCon",
+      "slug": "houseccon",
+      "path": "HouSecCon/",
+      "description": null,
+      "image": "https://infocon.org/cons/HouSecCon/HouSecCon%20logo.jpg"
+    },
+    {
+      "name": "IAPP",
+      "slug": "iapp",
+      "path": "IAPP/",
+      "description": "\"Policy neutral, we are the world’s largest information privacy organization.\"",
+      "image": "https://infocon.org/cons/IAPP/IAPP%20logo.jpg"
+    },
+    {
+      "name": "ICANN",
+      "slug": "icann",
+      "path": "ICANN/",
+      "description": "\"ICANN is a not-for-profit public-benefit corporation with participants from all over the world dedicated to keeping the Internet secure, stable and interoperable. It promotes competition and develops policy on the Internet's unique identifiers. Through its coordination role of the Internet's naming system, it does have an important impact on the expansion and evolution of the Internet.\"",
+      "image": "https://infocon.org/cons/ICANN/ICANN%20Logo.png"
+    },
+    {
+      "name": "ICS Village",
+      "slug": "ics-village",
+      "path": "ICS%20Village/",
+      "description": "\"ICS Village, a 501(c)3 non-profit, was formalized in 2017 with origins going back to 2013. We equip industry professionals and policymakers to better defend industrial equipment through experiential awareness, education, and training.\"",
+      "image": "https://infocon.org/cons/ICS%20Village/ICS%20Village%20logo.jpg"
+    },
+    {
+      "name": "IEEE Security & Privacy",
+      "slug": "ieee-security-&-privacy",
+      "path": "IEEE%20Security%20%26%20Privacy/",
+      "description": "From the IEEE Symposium on Security and Privacy. \"Since 1980, the IEEE Symposium on Security and Privacy has been the premier forum for presenting developments in computer security and electronic privacy, and for bringing together researchers and practitioners in the field.\"",
+      "image": "https://infocon.org/cons/IEEE%20Security%20%26%20Privacy/IEEE%20logo.jpg"
+    },
+    {
+      "name": "IETF",
+      "slug": "ietf",
+      "path": "IETF/",
+      "description": "\"The Internet Engineering Task Force (IETF) is the premier Internet standards body, developing open standards through open processes.\"",
+      "image": "https://infocon.org/cons/IETF/IETF%20logo.jpg"
+    },
+    {
+      "name": "Infiltrate",
+      "slug": "infiltrate",
+      "path": "Infiltrate/",
+      "description": "\"INFILTRATE is a deeply technical conference that focuses entirely on offensive security issues. Groundbreaking researchers demonstrate techniques that you cannot find elsewhere. Learn computer and network exploitation, vulnerability discovery, and rootkit & trojan covert protocols. INFILTRATE eschews policy and high-level presentations in favor of hard-core thought-provoking technical meat.\"",
+      "image": "https://infocon.org/cons/Infiltrate/Infiltrate%20logo.png"
+    },
+    {
+      "name": "Infosec in the City",
+      "slug": "infosec-in-the-city",
+      "path": "Infosec%20in%20the%20City/",
+      "description": "\"IIC is an international cybersecurity capability and capacity development network. IIC organises training, events and conferences tailored to the city where it is hosted.\" So far only hosted in Singapore as \"SINCON\"",
+      "image": "https://infocon.org/cons/Infosec%20in%20the%20City/Infosec%20in%20the%20City%20logo.jpg"
+    },
+    {
+      "name": "InfoWarCon",
+      "slug": "infowarcon",
+      "path": "InfoWarCon/",
+      "description": "Started \"20 years too soon\" in 1995 by Winn Schwartau.",
+      "image": "https://infocon.org/cons/InfoWarCon/InfoWarCon%20logo.jpg"
+    },
+    {
+      "name": "Insomni'hack",
+      "slug": "insomni'hack",
+      "path": "Insomni%27hack/",
+      "description": null,
+      "image": "https://infocon.org/cons/Insomni%27hack/Insomni'hack%20logo%202.jpg"
+    },
+    {
+      "name": "Intro Sec Con",
+      "slug": "intro-sec-con",
+      "path": "Intro%20Sec%20Con/",
+      "description": null,
+      "image": "https://infocon.org/cons/Intro%20Sec%20Con/IntoSecCon%20logo.jpg"
+    },
+    {
+      "name": "IRISSCERT",
+      "slug": "irisscert",
+      "path": "IRISSCERT/",
+      "description": "Ireland's first CERT (Computer Emergency Response Team)",
+      "image": "https://infocon.org/cons/IRISSCERT/IRISSCERT%20logo.jpg"
+    },
+    {
+      "name": "Isolation Con",
+      "slug": "isolation-con",
+      "path": "Isolation%20Con/",
+      "description": "Started in 2020 and organized by The Many Hats Club (TMHC)",
+      "image": "https://infocon.org/cons/Isolation%20Con/Isolation%20Con%201%20logo.png"
+    },
+    {
+      "name": "Kawaiicon",
+      "slug": "kawaiicon",
+      "path": "Kawaiicon/",
+      "description": "Kawaiicon started in 2019 in Wellington City, New Zealand and evolved out of KiwiCon which ran from 2007 to 2018.",
+      "image": "https://infocon.org/cons/Kawaiicon/kawaiicon%20logo.jpg"
+    },
+    {
+      "name": "KazHackStan",
+      "slug": "kazhackstan",
+      "path": "KazHackStan/",
+      "description": "Started in 2017 and held in the Republic of Kazakhstan",
+      "image": "https://infocon.org/cons/KazHackStan/KazHackStan%20logo.jpg"
+    },
+    {
+      "name": "KiwiCon",
+      "slug": "kiwicon",
+      "path": "KiwiCon/",
+      "description": "KiwiCon was New Zealands Hacker Con from 2007 to 2018. A followon con called Kawaiicon started in 2019.",
+      "image": "https://infocon.org/cons/KiwiCon/KiwiCon%20logo.jpg"
+    },
+    {
+      "name": "KringleCon",
+      "slug": "kringlecon",
+      "path": "KringleCon/",
+      "description": "\"The official home for the educational information security talks of KringleCon, a free online virtual hacker conference: https://holidayhackchallenge.com\" Run by SANS and started in 2018.",
+      "image": "https://infocon.org/cons/KringleCon/KringleCon%202021%20Logo.jpg"
+    },
+    {
+      "name": "LangSec",
+      "slug": "langsec",
+      "path": "LangSec/",
+      "description": "\"The View from the Tower of Babel\"",
+      "image": "https://infocon.org/cons/LangSec/IEEE%20logo.jpg"
+    },
+    {
+      "name": "LASCON",
+      "slug": "lascon",
+      "path": "LASCON/",
+      "description": "\"The Lonestar Application Security Conference is security conference for builders and breakers from app devs to security engineers and from devops to testers. Austin, Texas\"",
+      "image": "https://infocon.org/cons/LASCON/LASCON%20logo.jpg"
+    },
+    {
+      "name": "LASER",
+      "slug": "laser",
+      "path": "LASER/",
+      "description": "LASER Workshop was started in 2011",
+      "image": null
+    },
+    {
+      "name": "Layer8",
+      "slug": "layer8",
+      "path": "Layer8/",
+      "description": "\"Layer 8 Conference is the first conference to be solely focused on social engineering and intelligence gathering. Layer 8 Conference is an official 501(c)(3) non-profit organization.\"",
+      "image": "https://infocon.org/cons/Layer8/Layer8%20logo.jpg"
+    },
+    {
+      "name": "LayerOne",
+      "slug": "layerone",
+      "path": "LayerOne/",
+      "description": "\"LayerOne is an information security conference located in Los Angeles, California. Since 2004, we�ve provided a venue for some of the best minds in technology, cyber security, and hacking to meet and learn from one another. One of the defining features of LayerOne is the overwhelming amount of hands-on workshops, events, and contests available to all attendees.\"",
+      "image": "https://infocon.org/cons/LayerOne/LayerOne%20logo.png"
+    },
+    {
+      "name": "Le Tour Du Hack",
+      "slug": "le-tour-du-hack",
+      "path": "Le%20Tour%20Du%20Hack/",
+      "description": "Note: Le Tour Du Hack started in 2019.",
+      "image": "https://infocon.org/cons/Le%20Tour%20Du%20Hack/ENUSEC%20logo.jpg"
+    },
+    {
+      "name": "leHACK",
+      "slug": "lehack",
+      "path": "leHACK/",
+      "description": "NOTE: In 2019 the conference was renamed from Nuit Du Hack to leHACK.",
+      "image": "https://infocon.org/cons/leHACK/leHACK%20logo.jpg"
+    },
+    {
+      "name": "LevelUp",
+      "slug": "levelup",
+      "path": "LevelUp/",
+      "description": "Note: LevelUp is run by BugCrowd",
+      "image": "https://infocon.org/cons/LevelUp/BugCrowd%20logo.jpg"
+    },
+    {
+      "name": "LocoMocoSec",
+      "slug": "locomocosec",
+      "path": "LocoMocoSec/",
+      "description": "\"Loco Moco Security Conference brings together extraordinary defenders to extraordinary locations on Hawaii. Our mission is to create a platform where builders and defenders can share a cultivated interest in making impactful and long lasting changes for the state of product and web security.\"",
+      "image": "https://infocon.org/cons/LocoMocoSec/LocoMocoSec%20logo.jpg"
+    },
+    {
+      "name": "Louisville Metro InfoSec",
+      "slug": "louisville-metro-infosec",
+      "path": "Louisville%20Metro%20InfoSec/",
+      "description": "\"Organized by the Kentuckiana Chapter of ISSA, this event will provide infosec professionals with the opportunity to congregate for a day of keynote speakers, multiple break out tracks, and networking with lunch included.\"",
+      "image": "https://infocon.org/cons/Louisville%20Metro%20InfoSec/Louisville%20Metro%20InfoSec%20logo-2.webp"
+    },
+    {
+      "name": "m0leCon",
+      "slug": "m0lecon",
+      "path": "m0leCon/",
+      "description": "\"m0leCon 2021 is the third edition of the computer security conference organized by the student team pwnthem0le in collaboration with Politecnico di Torino. The aim is to bring together hackers, security experts, and IT specialists from different backgrounds and skill levels. The conference will feature a variety of talks and presentations, mostly focused on various aspects of offensive security; it will be completely free of charge and entirely held in English.\"",
+      "image": "https://infocon.org/cons/m0leCon/m0leCon%20logo.png"
+    },
+    {
+      "name": "Mayhem",
+      "slug": "mayhem",
+      "path": "Mayhem/",
+      "description": "Mayhem is organized by the Red Team Village and started in 2021",
+      "image": "https://infocon.org/cons/Mayhem/Red%20Team%20Village%20logo.jpg"
+    },
+    {
+      "name": "MCSC",
+      "slug": "mcsc",
+      "path": "MCSC/",
+      "description": "\"We are Germany’s leading expert network for information security. If you want to learn more about us, please visit https://it-security-munich.net/ueber-uns/about-us-english/.",
+      "image": "https://infocon.org/cons/MCSC/MCSC%20logo-2.jpg"
+    },
+    {
+      "name": "MisinfoCon",
+      "slug": "misinfocon",
+      "path": "MisinfoCon/",
+      "description": "\"MisinfoCon is a global movement focused on building solutions to online trust, verification, fact checking, and reader experience in the interest of addressing misinformation in all of its forms. MisinfoCon started as a large gathering at MIT in February 2017. That conference brought together ambassadors from technology platforms, news organizations, as well as experts in social science, media literacy, policy, advocacy and cybersecurity. Ever since then, MisinfoCon has focused on bringing people together in similar meetups, while facilitating online community and resource sharing. Subscribe to our newsletter: http://eepurl.com/cBO3UX\"",
+      "image": "https://infocon.org/cons/MisinfoCon/MisinfoCon%20logo%20black.png"
+    },
+    {
+      "name": "MISP Summit",
+      "slug": "misp-summit",
+      "path": "MISP%20Summit/",
+      "description": "Threat information sharing, taking place in the days leading up to Hack.lu and organized by @circl_lu",
+      "image": "https://infocon.org/cons/MISP%20Summit/CIRCL%20Logo.jpg"
+    },
+    {
+      "name": "NahamCon",
+      "slug": "nahamcon",
+      "path": "NahamCon/",
+      "description": "NahamCon is organized by Nahamsec virtually.",
+      "image": "https://infocon.org/cons/NahamCon/NahamCon%20logo.jpg"
+    },
+    {
+      "name": "NANOG",
+      "slug": "nanog",
+      "path": "NANOG/",
+      "description": "\"The North American Network Operators Group (NANOG), is the professional association for Internet engineering, architecture and operations. Our core focus is on continuous improvement of the data transmission technologies, practices, and facilities that make the Internet function.\"",
+      "image": "https://infocon.org/cons/NANOG/NANOG%20circle%20logo.png"
+    },
+    {
+      "name": "No Hat",
+      "slug": "no-hat",
+      "path": "No%20Hat/",
+      "description": "\"No Hat is a yearly-based security conference organized by non-profit association Berghem-in-the-Middle.The event brings together specialists, professionals and hobbyists operating in the wide field of computer security and privacy.",
+      "image": "https://infocon.org/cons/No%20Hat/No%20Hat%20logo.png"
+    },
+    {
+      "name": "NolaCon",
+      "slug": "nolacon",
+      "path": "NolaCon/",
+      "description": "\"NolaCon is an Information Security/Hacker conference for professionals and enthusiasts alike located in New Orleans, offering training as well interesting and inventive talks and workshops.\"",
+      "image": "https://infocon.org/cons/NolaCon/NolaCon%20logo.png"
+    },
+    {
+      "name": "NoNameCon",
+      "slug": "nonamecon",
+      "path": "NoNameCon/",
+      "description": "\"100% community-built practical cyber security conference. NoNameCon is brought to you by the team behind UISGCON CTFs, OWASP Kyiv, OWASP Lviv, NoName podcast, and a few other gigs you might have heard of.\"",
+      "image": "https://infocon.org/cons/NoNameCon/NoNameCon%20logo%202.jpg"
+    },
+    {
+      "name": "NorthSec",
+      "slug": "northsec",
+      "path": "NorthSec/",
+      "description": "\"NorthSec is the biggest applied security event in Canada, aimed at raising the knowledge and technical expertise of professionals and students alike.\"",
+      "image": "https://infocon.org/cons/NorthSec/NorthSec%20logo.jpg"
+    },
+    {
+      "name": "notacon",
+      "slug": "notacon",
+      "path": "notacon/",
+      "description": "Looks like nothing has been updated since 2014, I think notacon is defunct.",
+      "image": "https://infocon.org/cons/notacon/notacon%20logo.png"
+    },
+    {
+      "name": "NotPinkCon",
+      "slug": "notpinkcon",
+      "path": "NotPinkCon/",
+      "description": "\"NotPinkCon es una conferencia de seguridad inform�tica impartida por mujeres y realizada anualmente en la Ciudad de Buenos Aires, Argentina. El evento posee un enfoque tecnico y la entrada es libre y gratuita para todas las personas que deseen formar parte.\"",
+      "image": "https://infocon.org/cons/NotPinkCon/NotPinkCon%202021%20logo.jpg"
+    },
+    {
+      "name": "Nuit Du Hack",
+      "slug": "nuit-du-hack",
+      "path": "Nuit%20Du%20Hack/",
+      "description": "Note: In 2019 the conference was renamed from Nuit Du Hack to leHACK. This archive also includes Hackerzvoice 2012 and 2013.",
+      "image": "https://infocon.org/cons/Nuit%20Du%20Hack/Nuit%20Du%20Hack%20Logo%202.jpg"
+    },
+    {
+      "name": "Nullcon",
+      "slug": "nullcon",
+      "path": "Nullcon/",
+      "description": "\"International Security Conference, Training & Exhibition Platform - the neXt security thing!\" Held in Goa, India",
+      "image": "https://infocon.org/cons/Nullcon/Nullcon%20logo.gif"
+    },
+    {
+      "name": "O'Reilly Security",
+      "slug": "o'reilly-security",
+      "path": "O%27Reilly%20Security/",
+      "description": "NOTE: I don't think O'Reilly are doing security conferences anymore.",
+      "image": "https://infocon.org/cons/O%27Reilly%20Security/O'Reilly%20Security%20logo.png"
+    },
+    {
+      "name": "Objective by the Sea",
+      "slug": "objective-by-the-sea",
+      "path": "Objective%20by%20the%20Sea/",
+      "description": "\"OBTS, is the world's only macOS security conference, which brings together the worlds top macOS security researchers and passionate mac users in stunning tropical locations.\" Started in 2018",
+      "image": "https://infocon.org/cons/Objective%20by%20the%20Sea/OBTS%20logo.jpg"
+    },
+    {
+      "name": "Off-By-One",
+      "slug": "off-by-one",
+      "path": "Off-By-One/",
+      "description": "Started in 2024 by Star Labs in Singapore. Off-by-One Conference is a cybersecurity conference where like-minded professionals gather and exchange technical insights while gaining knowledge from one another. As the offensive security landscape continues to evolve, the Conference will also serve as a community to nurture and showcase new and uprising local and regional researchers.",
+      "image": "https://infocon.org/cons/Off-By-One/Off-By-One%202025%20logo.png"
+    },
+    {
+      "name": "OffensiveCon",
+      "slug": "offensivecon",
+      "path": "OffensiveCon/",
+      "description": "\"OffensiveCon Berlin is a highly technical international security conference focused on offensive security only. The aim of OffensiveCon is to bring the community of hackers together for high quality and deep technical talks, engaging and renowned technical trainings. The talks at OffensiveCon are focused on offensive IT security topics such as vulnerability discovery, advanced exploitation techniques and reverse engineering.\"",
+      "image": "https://infocon.org/cons/OffensiveCon/OffensiveCon%20logo%202.png"
+    },
+    {
+      "name": "OFFZONE",
+      "slug": "offzone",
+      "path": "OFFZONE/",
+      "description": "\"Сердце конференции OFFZONE — по-настоящему качественный технический контент и практические исследования в области кибербезопасности. Никаких пиджаков, никакого бизнеса — только hardcore research.\"",
+      "image": "https://infocon.org/cons/OFFZONE/OFFZONE%20logo.jpg"
+    },
+    {
+      "name": "Oh My Hack",
+      "slug": "oh-my-hack",
+      "path": "Oh%20My%20Hack/",
+      "description": "\"Oh My Hack od kilku lat zrzesza specjalistki i specjalistów branży cybersecurity, którzy dzielą się swoją wiedzą i doświadczeniami. Wejdź do świata cyberbezpieczeństwa: dołącz do red lub blue teamu, spotkaj ekspertów, zdobądź wartościowe kontakty i praktyczne umiejętności, a przede wszystkim - ciesz się wyjątkową atmosferą konferencji.\"",
+      "image": "https://infocon.org/cons/Oh%20My%20Hack/Oh%20My%20H%40ck%20logo%201.png"
+    },
+    {
+      "name": "OISF",
+      "slug": "oisf",
+      "path": "OISF/",
+      "description": null,
+      "image": null
+    },
+    {
+      "name": "OPCDE",
+      "slug": "opcde",
+      "path": "OPCDE/",
+      "description": "\"opcode: short for operational code, it is a number that determines the computer instruction to be executed_ OPCDE is an high-end cybersecurity event that aims at promoting innovating research in strategic locations around the globe.\"",
+      "image": "https://infocon.org/cons/OPCDE/OPCDE%20Logo.jpg"
+    },
+    {
+      "name": "Open Source Firmware Con",
+      "slug": "open-source-firmware-con",
+      "path": "Open%20Source%20Firmware%20Con/",
+      "description": "\"Mission: Change the way of firmware development, collaborate with others and share knowledge. Closed source firmware development has been the de-facto standard for the electronics industry since its inception. That didn't change even when open-source took off in other areas. Now, with changing use cases and strict security requirements, it's more important than ever to take open-source firmware development to the next level. That's why we're inviting you to the Open Source Firmware Conference.\"",
+      "image": "https://infocon.org/cons/Open%20Source%20Firmware%20Con/OSFC%20logo.jpg"
+    },
+    {
+      "name": "OURSA",
+      "slug": "oursa",
+      "path": "OURSA/",
+      "description": "OURSA 2018 was a one-day conference held on April 17, 2018 in San Francisco, dedicated to showcasing critical and emerging topics in security, privacy, and technology, presented by a diverse and inclusive set of experts. Each session focused on short talks from multiple specialists, followed by a moderated discussion.",
+      "image": "https://infocon.org/cons/OURSA/OURSA%20logo.png"
+    },
+    {
+      "name": "outerz0ne",
+      "slug": "outerz0ne",
+      "path": "outerz0ne/",
+      "description": "Held in Atlanta, GA",
+      "image": "https://infocon.org/cons/outerz0ne/outerz0ne%2010%20Logo.jpg"
+    },
+    {
+      "name": "OWASP",
+      "slug": "owasp",
+      "path": "OWASP/",
+      "description": "\"The Open Web Application Security Project (OWASP) is a 501(c)(3) worldwide not-for-profit charitable organization focused on improving the security of software. Our mission is to make software security visible, so that individuals and organizations worldwide can make informed decisions about true software security risks.\"",
+      "image": "https://infocon.org/cons/OWASP/OWASP%20logo.jpg"
+    },
+    {
+      "name": "OzSecCon",
+      "slug": "ozseccon",
+      "path": "OzSecCon/",
+      "description": "Originally called OzLockCon for the first year in 2017, renamed to OzSecCon",
+      "image": "https://infocon.org/cons/OzSecCon/OzSecCon%20Logo.jpg"
+    },
+    {
+      "name": "Pacific Hackers",
+      "slug": "pacific-hackers",
+      "path": "Pacific%20Hackers/",
+      "description": "We're a community of hackers and cybersecurity enthusiasts focused on practical skills, digital rights, and fostering a welcoming environment for everyone. We're building a strong cybersecurity community focused on practical skills, digital rights, and inclusivity. Our mission is to empower and connect cybersecurity professionals through accessible training, community building, and job placement. Together, we're creating a more secure digital future for everyone.",
+      "image": "https://infocon.org/cons/Pacific%20Hackers/Pacific%20Hackers%20logo.jpg"
+    },
+    {
+      "name": "PajamaCon",
+      "slug": "pajamacon",
+      "path": "PajamaCon/",
+      "description": "\"A virtual infosec Pajama Pub Crawl with #infosec lightning talks, training, and games.\" Started in 2020",
+      "image": null
+    },
+    {
+      "name": "PancakesCon",
+      "slug": "pancakescon",
+      "path": "PancakesCon/",
+      "description": "\"This is the conference channel for PancakesCon, a pop-up, virtual cybersecurity / hacking conference. Details at https://pancakescon.com. All PancakesCon talks must be 1/2 on topic, and 1/2 about an unrelated hobby or skill. Operated by Lesley Carhart @hacks4pancakes, and and an amazing team of volunteers!\"",
+      "image": "https://infocon.org/cons/PancakesCon/PancakesCon%201%20logo.jpg"
+    },
+    {
+      "name": "Pass the SALT",
+      "slug": "pass-the-salt",
+      "path": "Pass%20the%20SALT/",
+      "description": "Started in 2018 and \"Dedicated to Free Software and Security. Free as in free beer and as in Freedom. English spoken conference. 3 days of talks & workshops. Lille, France.\"",
+      "image": "https://infocon.org/cons/Pass%20the%20SALT/Pass%20the%20SALT%20logo.jpg"
+    },
+    {
+      "name": "PasswordsCon",
+      "slug": "passwordscon",
+      "path": "PasswordsCon/",
+      "description": "A hacker conference that�s all about passwords, PIN codes, and digital authentication.",
+      "image": null
+    },
+    {
+      "name": "PETS",
+      "slug": "pets",
+      "path": "PETS/",
+      "description": "\"The annual Privacy Enhancing Technologies Symposium (PETS) brings together privacy experts from around the world to present and discuss recent advances and new perspectives on research in privacy technologies. PETS/PoPETs is the premier venue for novel applied and/or theoretical research into the design, analysis, experimentation, or fielding of privacy-enhancing technologies.\"",
+      "image": "https://infocon.org/cons/PETS/PETS%20Logo.jpg"
+    },
+    {
+      "name": "PH-Neutral",
+      "slug": "ph-neutral",
+      "path": "PH-Neutral/",
+      "description": "\"Phenoelit would like to create the frame in which people interested in computer security (commonly referred to as hackers *g*) can share ideas/codes/success.",
+      "image": "https://infocon.org/cons/PH-Neutral/PH-Neutral%20logo.gif"
+    },
+    {
+      "name": "PhreakNIC",
+      "slug": "phreaknic",
+      "path": "PhreakNIC/",
+      "description": "\"PhreakNIC is an annual hacker and technology convention held in Nashville, Tennessee. It is organized by the Nashville 2600 Organization and draws upon resources from SouthEastern 2600. The Nashville Linux User Group was closely tied with PhreakNIC for the first 10 years, but is no longer an active participant in the planning. First held in 1997, PhreakNIC continues to be a long-time favorite among hackers, security experts and technology enthusiasts.\"",
+      "image": "https://infocon.org/cons/PhreakNIC/PhreakNIC%20logo.png"
+    },
+    {
+      "name": "Positive Hack Days",
+      "slug": "positive-hack-days",
+      "path": "Positive%20Hack%20Days/",
+      "description": "\"Bringing the world's cutting edge in digital security to Moscow every year. Held since 2011. Organized by Positive Technologies.\"",
+      "image": "https://infocon.org/cons/Positive%20Hack%20Days/PHD%20logo.jpg"
+    },
+    {
+      "name": "Privacy Camp",
+      "slug": "privacy-camp",
+      "path": "Privacy%20Camp/",
+      "description": "\"PrivacyCamp.EU is an annual conference held the day before the start of the CPDP. The event brings together digital rights advocates, members of NGOs, activists as well as academics and policy-makers from all around Europe and beyond to discuss the most pressing issues facing human rights online.",
+      "image": "https://infocon.org/cons/Privacy%20Camp/EDRi%20logo.png"
+    },
+    {
+      "name": "QuahogCon",
+      "slug": "quahogcon",
+      "path": "QuahogCon/",
+      "description": "NOTE: Domain is gone and I can't find any more information about the con beside once in 2010.",
+      "image": null
+    },
+    {
+      "name": "r00tz Asylum",
+      "slug": "r00tz-asylum",
+      "path": "r00tz%20Asylum/",
+      "description": "\"r00tz Asylum is a nonprofit dedicated to teaching kids around the world how to love being white-hat hackers. A white-hat hacker is someone who enjoys thinking of innovative new ways to make, break and use anything to create a better world.",
+      "image": "https://infocon.org/cons/r00tz%20Asylum/r00tz%20Asylum%20logo.jpg"
+    },
+    {
+      "name": "r2con",
+      "slug": "r2con",
+      "path": "r2con/",
+      "description": "\"The first public and international congress about radare.",
+      "image": "https://infocon.org/cons/r2con/r2logo.png"
+    },
+    {
+      "name": "RE-verse",
+      "slug": "re-verse",
+      "path": "RE-verse/",
+      "description": "RE//verse is a premier reverse engineering, vulnerability research and malware analysis conference. We offer trainings and talks from industry-leading experts. RE//verse is located in Orlando, Florida at the Caribe Royale, minutes away from Disney World.",
+      "image": "https://infocon.org/cons/RE-verse/RE-verse%20logo.png"
+    },
+    {
+      "name": "REcon",
+      "slug": "recon",
+      "path": "REcon/",
+      "description": "\"REcon is a computer security conference with a focus on reverse engineering and advanced exploitation techniques.\"",
+      "image": "https://infocon.org/cons/REcon/REcon%202014%20logo.png"
+    },
+    {
+      "name": "RightsCon",
+      "slug": "rightscon",
+      "path": "RightsCon/",
+      "description": "RightsCon is organized by AccessNow. \"Access Now defends and extends the digital rights of users at risk around the world. By combining innovative policy, global advocacy, and direct technical support, we fight for open and secure communications for all.\"",
+      "image": "https://infocon.org/cons/RightsCon/RightsCon%20logo.gif"
+    },
+    {
+      "name": "ROADSEC",
+      "slug": "roadsec",
+      "path": "ROADSEC/",
+      "description": "\"Canal do Roadsec, o maior evento itinerante de hacking do país! Tecnologia, carreira, networking e muito mais!\"",
+      "image": "https://infocon.org/cons/ROADSEC/ROADSEC%20logo.jpg"
+    },
+    {
+      "name": "ROMHACK",
+      "slug": "romhack",
+      "path": "ROMHACK/",
+      "description": "\"RomHack is a free cyber security event organized by the non-profit organization Cyber Saiyan\"",
+      "image": "https://infocon.org/cons/ROMHACK/ROMHACK%20logo.png"
+    },
+    {
+      "name": "ROOTCON",
+      "slug": "rootcon",
+      "path": "ROOTCON/",
+      "description": "\"ROOTCON was founded back in 2008, the word ROOTCON is derivatives from the two words root (a unix super-user) and con as conference.",
+      "image": "https://infocon.org/cons/ROOTCON/ROOTCON%20logo.jpg"
+    },
+    {
+      "name": "Rooted CON",
+      "slug": "rooted-con",
+      "path": "Rooted%20CON/",
+      "description": "Started in 2010 in Madrid, Spain \"Canal de Youtube oficial del congreso de seguridad inform�tica Rooted CON celebrado en Madrid (Espa�a) desde 2010.\"",
+      "image": "https://infocon.org/cons/Rooted%20CON/Rooted%20CON%20logo.jpg"
+    },
+    {
+      "name": "ROOTS",
+      "slug": "roots",
+      "path": "ROOTS/",
+      "description": "\"Until now, Europe lacked a premier academic symposium on offensive technologies. ROOTS fills this gap by providing an academic platform to discuss trends in exploitation, reversing, and other offensive techniques and how to protect against them.\"",
+      "image": "https://infocon.org/cons/ROOTS/ROOTS%20logo.png"
+    },
+    {
+      "name": "RSA",
+      "slug": "rsa",
+      "path": "RSA/",
+      "description": "\"RSA Conference is the premier series of global events and year-round learning for the cybersecurity community.\"",
+      "image": "https://infocon.org/cons/RSA/RSAC%20Logo%201.jpg"
+    },
+    {
+      "name": "Rubicon",
+      "slug": "rubicon",
+      "path": "Rubicon/",
+      "description": "From wikipedia: \"Rubi-Con was a hacker convention that took place in Detroit, Michigan from 1999 to 2003 inclusive. After folding in its fifth year, Rubi-Con organizers managed to destroy its name through a creative website prank thereby preventing others from using the reputation to build their own events.\"",
+      "image": "https://infocon.org/cons/Rubicon/Rubicon3%20badge.jpg"
+    },
+    {
+      "name": "RuhrSec",
+      "slug": "ruhrsec",
+      "path": "RuhrSec/",
+      "description": "\"RuhrSec is the non-profit security conference at the Ruhr University Bochum. As one of the organizers of the famous lecture called HackPra, we are hosting a high-quality and low-priced security conference in the heart of Bochum near the river Ruhr.\"",
+      "image": "https://infocon.org/cons/RuhrSec/RuhrSec%20logo.jpg"
+    },
+    {
+      "name": "Ruxcon",
+      "slug": "ruxcon",
+      "path": "Ruxcon/",
+      "description": "\"Ruxcon is a computer security conference that aims to bring together the best and the brightest security talent within the Aus-Pacific region. The conference is a mixture of live presentations, activities and demonstrations presented by security experts from the Aus-Pacific region and invited guests from around the world. Ruxcon is widely regarded as a leading computer security conference within Australia attracting all facets of the security landscape from industry, academics, to enthusiasts.\"",
+      "image": "https://infocon.org/cons/Ruxcon/RuxCon%20logo.jpg"
+    },
+    {
+      "name": "RVAsec",
+      "slug": "rvasec",
+      "path": "RVAsec/",
+      "description": "\"RVAsec is the first Richmond, Virginia, security convention to bring top speakers to the mid-atlantic region.\"",
+      "image": "https://infocon.org/cons/RVAsec/RVAsec%2013%20logo.png"
+    },
+    {
+      "name": "S4",
+      "slug": "s4",
+      "path": "S4/",
+      "description": "\"S4 is the world's largest and most advanced ICS Security / SCADA Security and Operations Technology Event. The best in world, the influencers, 1,100 at the last event, gather in Miami South Beach every winter to Create The Future of OT and ICS security.\" Held in Florida, USA.",
+      "image": "https://infocon.org/cons/S4/S4%20logo.jpg"
+    },
+    {
+      "name": "SAINTCON",
+      "slug": "saintcon",
+      "path": "SAINTCON/",
+      "description": "Utah’s Premiere Cyber Security Conference, held in Salt Lake City, Utah, USA",
+      "image": "https://infocon.org/cons/SAINTCON/SAINTCON%202021%20logo.jpg"
+    },
+    {
+      "name": "SANS",
+      "slug": "sans",
+      "path": "SANS/",
+      "description": "This collection includes multiple summit series from SANS",
+      "image": "https://infocon.org/cons/SANS/SANS%20DFIR%20logo.jpg"
+    },
+    {
+      "name": "SEC-T",
+      "slug": "sec-t",
+      "path": "SEC-T/",
+      "description": "An annual Swedish information security conference. SEC-T is an independent non-profit organization focused on spreading understanding about information security within the technology arena.",
+      "image": "https://infocon.org/cons/SEC-T/SEC-T%20logo.jpg"
+    },
+    {
+      "name": "SecTor",
+      "slug": "sector",
+      "path": "SecTor/",
+      "description": "Started in 2006 in Canada, SecTor was bought by Informa, who also own Black Hat, in 2018 and stopped posting conference videos shortly after.",
+      "image": "https://infocon.org/cons/SecTor/sector%20logo.jpg"
+    },
+    {
+      "name": "SecureWV",
+      "slug": "securewv",
+      "path": "SecureWV/",
+      "description": "\"304 Geeks conducts an annual Infosec conference called SecureWV to fulfill the primary objectives of awareness and education. This conference is one of the larger regional conferences, that attracts nationally known Infosec leaders to teach and speak about advanced Information security topics.\"",
+      "image": "https://infocon.org/cons/SecureWV/SecureWV%20logo.jpg"
+    },
+    {
+      "name": "Securi-Tay",
+      "slug": "securi-tay",
+      "path": "Securi-Tay/",
+      "description": "\"Securi-Tay is an information Security conference held by the Ethical Hacking Society at Abertay University.\" Held in the United Kingdom.",
+      "image": "https://infocon.org/cons/Securi-Tay/Securi-Tay%20logo.png"
+    },
+    {
+      "name": "Security BSides",
+      "slug": "security-bsides",
+      "path": "Security%20BSides/",
+      "description": null,
+      "image": "https://infocon.org/cons/Security%20BSides/BSides%20Logo.png"
+    },
+    {
+      "name": "Security BSides London",
+      "slug": "bsides-london",
+      "path": "Security%20BSides%20London/",
+      "description": "BSides London security conference talks",
+      "image": null
+    },
+    {
+      "name": "Security Fest",
+      "slug": "security-fest",
+      "path": "Security%20Fest/",
+      "description": "The first annual Security Fest was held on the 2nd of June, 2016 in G�teborg, Sweden.",
+      "image": "https://infocon.org/cons/Security%20Fest/Security%20Fest%20logo.jpg"
+    },
+    {
+      "name": "Security Onion",
+      "slug": "security-onion",
+      "path": "Security%20Onion/",
+      "description": "If you use, or are considering using Security Onion, then you should attend Security Onion Conference! Find out what's new with Security Onion, learn best practices and exchange ideas with other users.",
+      "image": "https://infocon.org/cons/Security%20Onion/Security%20Onion%20Logo.png"
+    },
+    {
+      "name": "Security PWNing",
+      "slug": "security-pwning",
+      "path": "Security%20PWNing/",
+      "description": "Held in Warsaw, Poland",
+      "image": null
+    },
+    {
+      "name": "Shakacon",
+      "slug": "shakacon",
+      "path": "Shakacon/",
+      "description": "Shakacon is Hawaii�s only Call for Paper based IT security conference. Shakacon is recognized as Hawaii�s premier information security centric conference with speakers and attendees from around the globe.",
+      "image": "https://infocon.org/cons/Shakacon/Shakacon%20logo.png"
+    },
+    {
+      "name": "ShaktiCon",
+      "slug": "shakticon",
+      "path": "ShaktiCon/",
+      "description": "\"ShaktiCon is a completely free global conference focused on inspiring, training, and upskilling women in cybersecurity. ShaktiCon includes keynote sessions, training, contests, and workshops. Our pre-conference contest attracted over 1500 participants from 5 continents in December 2020.",
+      "image": "https://infocon.org/cons/ShaktiCon/ShaktiCon%20logo.jpg"
+    },
+    {
+      "name": "ShellCon",
+      "slug": "shellcon",
+      "path": "ShellCon/",
+      "description": "\"ShellCon is an information security conference that is held annually in the beautiful beach cities of Los Angeles.\"",
+      "image": "https://infocon.org/cons/ShellCon/ShellCon%20logo.jpg"
+    },
+    {
+      "name": "ShmooCon",
+      "slug": "shmoocon",
+      "path": "ShmooCon/",
+      "description": "Started in 2005 ShmooCon was an American hacker convention organized by The Shmoo Group. There were typically 40 different talks and presentations on a variety of subjects related to computer security and cyberculture. Multiple events were held at the convention related to cryptography and computer security such as Shmooganography, Hack Fortress, a locksport village hosted by TOOOL DC, and Ghost in the Shellcode.",
+      "image": "https://infocon.org/cons/ShmooCon/ShmooCon%20logo.jpg"
+    },
+    {
+      "name": "ShowMeCon",
+      "slug": "showmecon",
+      "path": "ShowMeCon/",
+      "description": "NOTE: \"After eight years, ShowMeCon has ended.",
+      "image": "https://infocon.org/cons/ShowMeCon/ShowMeCon-logo.png"
+    },
+    {
+      "name": "SIRAcon",
+      "slug": "siracon",
+      "path": "SIRAcon/",
+      "description": "\"The Society of Information Risk Analysts (SIRA), established in 2011, is the go-to resource for decision makers & practitioners of information risk management. We endeavor to do this by supporting the collaborative efforts of our members through research, knowledge sharing, and member-driven education.\"",
+      "image": "https://infocon.org/cons/SIRAcon/SIRAcon%20logo.png"
+    },
+    {
+      "name": "SkyDogCon",
+      "slug": "skydogcon",
+      "path": "SkyDogCon/",
+      "description": "\"SkyDogCon is a technology conference in Nashville, Tennessee for the individual with the Renaissance Mind. It mixes Hacking and Making with a healthy dose of Technology and Information Security.",
+      "image": "https://infocon.org/cons/SkyDogCon/SkyDogCon%206%20logo.png"
+    },
+    {
+      "name": "SLEUTHCON",
+      "slug": "sleuthcon",
+      "path": "SLEUTHCON/",
+      "description": "\"SLEUTHCON is a forum for identifying and exploring cybercrime and financially-motivated threats. This one-day conference in Arlington, VA highlights the work done by cybersecurity researchers, defenders, academics, law enforcement, and others. Brought to you by the same people from CYBERWARCON.\"",
+      "image": "https://infocon.org/cons/SLEUTHCON/SLEUTHCON%20logo%20wide.jpg"
+    },
+    {
+      "name": "SOURCE",
+      "slug": "source",
+      "path": "SOURCE/",
+      "description": "Also known as SOURCE Boston.",
+      "image": "https://infocon.org/cons/SOURCE/Source%20logo.jpg"
+    },
+    {
+      "name": "SteelCon",
+      "slug": "steelcon",
+      "path": "SteelCon/",
+      "description": "SteelCon is a unique event; the North of England hasn�t (until now) had a hacker con to call its own and we thought that it needed one.",
+      "image": "https://infocon.org/cons/SteelCon/SteelCon%20logo.png"
+    },
+    {
+      "name": "SummerCon",
+      "slug": "summercon",
+      "path": "SummerCon/",
+      "description": "\"Summercon is one of the oldest hacker conventions, and the longest running such conference in America. It helped set a precedent for more modern \"cons\" such as H.O.P.E. and DEF CON, although it has remained smaller and more personal. Summercon has been hosted in cities such as Pittsburgh, St. Louis, Atlanta, New York, Washington, D.C., Austin, Las Vegas, and Amsterdam.\" Summercon has gone through on and off years, and different organizers but the name lives on!",
+      "image": "https://infocon.org/cons/SummerCon/SummerCon%20logo%201.jpg"
+    },
+    {
+      "name": "SyScan",
+      "slug": "syscan",
+      "path": "SyScan/",
+      "description": "\"SyScan, also known as the Symposium on Security for Asia Network, has successfully hosted over 20 symposiums since 2004. The conference joined partnership with Qihoo 360 and debuted in Beijing in 2012 as SyScan360, and has been recognized as one of the most important security events in Asia.\" SyScan was sold to Qihoo360, and is now SyScan360, and looks like the last conference was held in Singapore 2016.",
+      "image": "https://infocon.org/cons/SyScan/NianXiaohei%20-%20Syscan%20360%20logo.webp"
+    },
+    {
+      "name": "t2 infosec",
+      "slug": "t2-infosec",
+      "path": "t2%20infosec/",
+      "description": "Started in 2005. \"The conference focuses on newly emerging information security research with a balance of topics on auditing and pen-testing, and security and defensive strategies. In general, presentations will address different aspects of information security—all presentations will include demos and be technically oriented and practical.\"",
+      "image": "https://infocon.org/cons/t2%20infosec/t2%20infosec%20logo.jpg"
+    },
+    {
+      "name": "TakeDownCon",
+      "slug": "takedowncon",
+      "path": "TakeDownCon/",
+      "description": "TAKEDOWN CON, organized by the EC Council seems to have only run in 2014 and 2015.",
+      "image": null
+    },
+    {
+      "name": "Texas Cyber Summit",
+      "slug": "texas-cyber-summit",
+      "path": "Texas%20Cyber%20Summit/",
+      "description": "\"Texas Cyber Summit is a premier cyber security summit held in San Antonio Texas, with the mission of spreading knowledge and interest in the field of Cyber Security. We are an inclusive summit that allows all Cybersecurity groups, associations and meetups to get involved.\"",
+      "image": "https://infocon.org/cons/Texas%20Cyber%20Summit/Texas%20Cyber%20Summit%20logo.jpg"
+    },
+    {
+      "name": "The IACR",
+      "slug": "the-iacr",
+      "path": "The%20IACR/",
+      "description": "The IACR operates many cryptography related onferences, including:",
+      "image": "https://infocon.org/cons/The%20IACR/IACR%20logo.png"
+    },
+    {
+      "name": "The Long Con",
+      "slug": "the-long-con",
+      "path": "The%20Long%20Con/",
+      "description": "\"The Long Con was first held in 2013 under the banner of BSides Winnipeg, and showcased speakers presenting to a sold-out venue over the course of a weekend. Our second and third events were held in 2015 and 2017, also selling out. All presentations from previous years can be found in our archive.\"",
+      "image": "https://infocon.org/cons/The%20Long%20Con/The%20Long%20Con%20logo.png"
+    },
+    {
+      "name": "The SAS",
+      "slug": "the-sas",
+      "path": "The%20SAS/",
+      "description": null,
+      "image": "https://infocon.org/cons/The%20SAS/The%20SAS%20logo.jpg"
+    },
+    {
+      "name": "Thotcon",
+      "slug": "thotcon",
+      "path": "Thotcon/",
+      "description": null,
+      "image": null
+    },
+    {
+      "name": "THREAT CON",
+      "slug": "threat-con",
+      "path": "THREAT%20CON/",
+      "description": "Held in Kathmandu, Nepal, and started in 2018 in is Nepals first hackers conference.",
+      "image": "https://infocon.org/cons/THREAT%20CON/THREAT%20CON%20logo.png"
+    },
+    {
+      "name": "Tiger Team",
+      "slug": "tiger-team",
+      "path": "tiger-team/",
+      "description": "American TV show (TruTV, 2007). A civilian tiger team infiltrates organizations testing their weaknesses to electronic, psychological, tactical, and physical threats — social engineering, wired/wireless hacking, and physical break-ins.",
+      "image": "https://archive.org/download/tiger-team-e01/__ia_thumb.jpg",
+      "type": "documentary"
+    },
+    {
+      "name": "ToorCon",
+      "slug": "toorcon",
+      "path": "ToorCon/",
+      "description": "\"For over 25 years, ToorCon has been bringing together the brightest minds in information security, hacking, and technology. Our events provide a platform for cutting-edge research, hands-on learning, and community building.\"",
+      "image": "https://infocon.org/cons/ToorCon/ToorCamp%20logo.png"
+    },
+    {
+      "name": "TROOPERS",
+      "slug": "troopers",
+      "path": "TROOPERS/",
+      "description": "A German IT Security conference focused on defense. Started in 2008.",
+      "image": "https://infocon.org/cons/TROOPERS/TROOPERS%20logo.gif"
+    },
+    {
+      "name": "TrustyCon",
+      "slug": "trustycon",
+      "path": "TrustyCon/",
+      "description": "Presentations from TrustyCon 2014 on February 27, 2014 in San Francisco, California. A once-only one day con held during RSA in a nearby movie theater. A reaction to the Snowden leaks.",
+      "image": "https://infocon.org/cons/TrustyCon/TrustyCon%20logo.jpg"
+    },
+    {
+      "name": "Unrestcon",
+      "slug": "unrestcon",
+      "path": "Unrestcon/",
+      "description": "The first convention was in 2016, australia.",
+      "image": "https://infocon.org/cons/Unrestcon/Unrest%20logo.png"
+    },
+    {
+      "name": "USENIX ATC",
+      "slug": "usenix-atc",
+      "path": "USENIX%20ATC/",
+      "description": "ATC: USENIX Annual Techincal Conference CSET: Cyber Security Experimentation and Test FOCI: Free and Open Communications on the Internet PEPR: Privacy Engineering Practice and Respect ScAINet: Security and AI Networking Conference SOUPS: Symposium on Usable Privacy and Security WOOT: Workshop on Offensive Technologies",
+      "image": "https://infocon.org/cons/USENIX%20ATC/USENIX%20logo.jpg"
+    },
+    {
+      "name": "USENIX Enigma",
+      "slug": "usenix-enigma",
+      "path": "USENIX%20Enigma/",
+      "description": "ATC: USENIX Annual Techincal Conference CSET: Cyber Security Experimentation and Test FOCI: Free and Open Communications on the Internet PEPR: Privacy Engineering Practice and Respect ScAINet: Security and AI Networking Conference SOUPS: Symposium on Usable Privacy and Security WOOT: Workshop on Offensive Technologies",
+      "image": "https://infocon.org/cons/USENIX%20Enigma/Enigma%20logo.jpg"
+    },
+    {
+      "name": "USENIX PEPR",
+      "slug": "usenix-pepr",
+      "path": "USENIX%20PEPR/",
+      "description": "ATC: USENIX Annual Techincal Conference CSET: Cyber Security Experimentation and Test FOCI: Free and Open Communications on the Internet PEPR: Privacy Engineering Practice and Respect ScAINet: Security and AI Networking Conference SOUPS: Symposium on Usable Privacy and Security WOOT: Workshop on Offensive Technologies",
+      "image": "https://infocon.org/cons/USENIX%20PEPR/PEPR%202020%20logo.png"
+    },
+    {
+      "name": "USENIX Security",
+      "slug": "usenix-security",
+      "path": "USENIX%20Security/",
+      "description": "\"The USENIX Security Symposium brings together researchers, practitioners, system programmers, and others interested in the latest advances in the security and privacy of computer systems and networks.\"",
+      "image": "https://infocon.org/cons/USENIX%20Security/USENIX%20logo.jpg"
+    },
+    {
+      "name": "USENIX SOUPS",
+      "slug": "usenix-soups",
+      "path": "USENIX%20SOUPS/",
+      "description": "SOUPS brings together an interdisciplinary group of researchers and practitioners in human-computer interaction, security, and privacy.",
+      "image": "https://infocon.org/cons/USENIX%20SOUPS/USENIX%20SOUPS%20logo.png"
+    },
+    {
+      "name": "USENIX VehicleSec",
+      "slug": "usenix-vehiclesec",
+      "path": "USENIX%20VehicleSec/",
+      "description": "SOUPS brings together an interdisciplinary group of researchers and practitioners in human-computer interaction, security, and privacy.",
+      "image": null
+    },
+    {
+      "name": "Virus Bulletin",
+      "slug": "virus-bulletin",
+      "path": "Virus%20Bulletin/",
+      "description": "\"The annual VB Conference has been running for over 35 years, covering a broad range of IT security topics and providing a venue for the brains of IT security from around the world to learn, debate, pass on their knowledge and move the industry forward.\"",
+      "image": "https://infocon.org/cons/Virus%20Bulletin/Virus%20Bulletin%20logo.png"
+    },
+    {
+      "name": "VXCON",
+      "slug": "vxcon",
+      "path": "VXCON/",
+      "description": null,
+      "image": null
+    },
+    {
+      "name": "WAHCKon",
+      "slug": "wahckon",
+      "path": "WAHCKon/",
+      "description": "\"Perth's First Hacker Con\" Started in 2013",
+      "image": "https://infocon.org/cons/WAHCKon/WAHCKon%20logo.png"
+    },
+    {
+      "name": "What The Hack",
+      "slug": "what-the-hack",
+      "path": "What%20The%20Hack/",
+      "description": "\"What The Hack was an outdoor hacker conference held in Liempde, Netherlands between the 28th and 31st of July, 2005.\"",
+      "image": null
+    },
+    {
+      "name": "WICCON",
+      "slug": "wiccon",
+      "path": "WICCON/",
+      "description": "\"WICCON is a conference with an all-women speaker line-up designed to highlight women’s technical achievements in the cybersecurity field. WICCON is organised by the women in cybersecurity community association based in The Netherlands. All attendees are welcome.\"",
+      "image": "https://infocon.org/cons/WICCON/WICCA%20Logo.png"
+    },
+    {
+      "name": "Wild West Hackin Fest",
+      "slug": "wild-west-hackin-fest",
+      "path": "Wild%20West%20Hackin%20Fest/",
+      "description": "Started in 2017 and held in Deadwood South Dakota, USA. Happens sometimes twice a year, \"Way West\" in San Diego and \"Deadwood\" and in 2025 \"Mile High\"",
+      "image": "https://infocon.org/cons/Wild%20West%20Hackin%20Fest/Wild%20West%20Hackin%20Fest%202018%20logo.jpg"
+    },
+    {
+      "name": "WOOT",
+      "slug": "woot",
+      "path": "WOOT/",
+      "description": "NOTE: WOOT also has been hosted by the IEEE Security and Privacy Conference in 2021",
+      "image": "https://infocon.org/cons/WOOT/USENIX%20logo.jpg"
+    },
+    {
+      "name": "x33fcon",
+      "slug": "x33fcon",
+      "path": "x33fcon/",
+      "description": "\"When Red meets Blue... The only security conference for Purple Teams on the planet.\" held in Gdynia Poland. Started in 2017.",
+      "image": "https://infocon.org/cons/x33fcon/x33con%20logo.png"
+    },
+    {
+      "name": "You Shot The Sheriff",
+      "slug": "you-shot-the-sheriff",
+      "path": "You%20Shot%20The%20Sheriff/",
+      "description": null,
+      "image": "https://infocon.org/cons/You%20Shot%20The%20Sheriff/YSTS%20logo.jpg"
+    },
+    {
+      "name": "Zero Day Con",
+      "slug": "zero-day-con",
+      "path": "Zero%20Day%20Con/",
+      "description": "Founded in March 2017, Global Cybersecurity Conference. Dublin, London, New York, Washington D.C. As of 2025 they have only held events in Dublin.",
+      "image": "https://infocon.org/cons/Zero%20Day%20Con/Zero%20Day%20Con%20logo.jpg"
+    },
+    {
+      "name": "ZeroNights",
+      "slug": "zeronights",
+      "path": "ZeroNights/",
+      "description": null,
+      "image": "https://infocon.org/cons/ZeroNights/ZeroNights%20logo.png"
+    },
+    {
+      "name": "Navaja Negra",
+      "slug": "navaja-negra",
+      "path": "Navaja%20Negra/",
+      "description": "Spanish security conference held in Albacete, Spain since 2013.",
+      "image": null
+    },
+    {
+      "name": "HackIT",
+      "slug": "hackit",
+      "path": "HackIT/",
+      "description": "Ukrainian cybersecurity conference held in Kyiv/Kharkiv.",
+      "image": null
+    },
+    {
+      "name": "Camp++",
+      "slug": "camp-plus-plus",
+      "path": "Camp%2B%2B/",
+      "description": "Hungarian hacker camp organized by Budapest Hackerspace.",
+      "image": null
+    },
+    {
+      "name": "Cairo Security Camp",
+      "slug": "cairo-security-camp",
+      "path": "Cairo%20Security%20Camp/",
+      "description": "Egyptian information security conference held in Cairo.",
+      "image": null
+    },
+    {
+      "name": "SECURE",
+      "slug": "secure",
+      "path": "SECURE/",
+      "description": "Polish security conference organized by CERT Polska.",
+      "image": null
+    },
+    {
+      "name": "HaxoGreen",
+      "slug": "haxogreen",
+      "path": "HaxoGreen/",
+      "description": "Luxembourg hacker camp.",
+      "image": null
+    },
+    {
+      "name": "DEF CON",
+      "slug": "def-con",
+      "path": "DEF%20CON/",
+      "description": "One of the world's largest hacker conventions, held annually in Las Vegas.",
+      "image": null
+    },
+    {
+      "name": "GambiConf",
+      "slug": "gambiconf",
+      "path": "GambiConf/",
+      "description": "Brazilian security conference about gambiarras (creative hacks/workarounds).",
+      "image": null
+    },
+    {
+      "name": "NDSS",
+      "slug": "ndss",
+      "path": "NDSS/",
+      "description": "Network and Distributed System Security Symposium — top academic security conference.",
+      "image": null
+    },
+    {
+      "name": "Security BSides Athens",
+      "slug": "bsides-athens",
+      "path": "Security%20BSides%20Athens/",
+      "description": "BSides Athens security conference, Greece.",
+      "image": null
+    }
+  ]
+}

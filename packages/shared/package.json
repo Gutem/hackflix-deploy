@@ -1,0 +1,14 @@
+{
+  "name": "@hackflix/shared",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    "./components/*": "./components/*.js",
+    "./lib/*": "./lib/*.js",
+    "./styles/*": "./styles/*.css"
+  },
+  "scripts": {
+    "build": "echo 'No build step for shared package'"
+  }
+}

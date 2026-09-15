@@ -1,0 +1,41 @@
+{
+  "name": "hackflix",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run dev:backend",
+    "dev:web": "bun run --filter '@hackflix/web' dev",
+    "dev:backend": "bun run --filter '@hackflix/backend' dev",
+    "dev:backoffice": "bun run --filter '@hackflix/backoffice' dev",
+    "dev:desktop": "bun run --filter '@hackflix/desktop' dev",
+    "dev:proxy": "caddy run --config caddy/Caddyfile",
+    "dev:compose": "docker compose up --build",
+    "stop": "pkill -f 'bun run' 2>/dev/null; pkill -f 'vite' 2>/dev/null; pkill -f 'caddy' 2>/dev/null; echo 'Services stopped'",
+    "ingest": "bun run --filter '@hackflix/workers' ingest",
+    "ingest:cron": "bun run --filter '@hackflix/workers' cron",
+    "build": "bun run build:shared && bun run build:web && bun run build:desktop",
+    "build:shared": "bun run --filter '@hackflix/shared' build",
+    "build:web": "bun run --filter '@hackflix/web' build",
+    "build:desktop": "bun run --filter '@hackflix/desktop' build",
+    "build:desktop:macos": "bun run --filter '@hackflix/desktop' build:macos",
+    "build:desktop:windows": "bun run --filter '@hackflix/desktop' build:windows",
+    "build:desktop:linux": "bun run --filter '@hackflix/desktop' build:linux",
+    "test": "bun test",
+    "test:unit": "bun test tests/unit/",
+    "test:integration": "bun test tests/integration/",
+    "test:e2e": "bunx playwright test",
+    "test:e2e:chromium": "bunx playwright test --project=chromium",
+    "test:e2e:firefox": "bunx playwright test --project=firefox",
+    "test:coverage": "bun test --coverage",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "biome": "0.3.3"
+  }
+}

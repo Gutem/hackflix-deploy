@@ -1,0 +1,11 @@
+{
+  "name": "@hackflix/ingest",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "ingest": "bun run src/cli.js",
+    "ingest:cron": "bun run src/cron.js",
+    "test": "bun test"
+  },
+  "dependencies": {}
+}

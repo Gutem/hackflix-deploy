@@ -1,0 +1,11 @@
+{
+  "name": "@hackflix/backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/server.js",
+    "start": "bun run src/server.js",
+    "test": "bun test"
+  },
+  "dependencies": {}
+}

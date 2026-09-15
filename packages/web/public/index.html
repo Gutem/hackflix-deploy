@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/alpine.min.js?v=1785940955" defer></script>
+  <script src="/js/hls.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/" class="active">Início</a>
+    <a href="/conferences/">Conferências</a>
+    <a href="/documentaries/">Documentários</a>
+    <a href="/topic/">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="main">
+  <div id="content" class="loading">Loading...</div>
+  <script>
+(function () {
+  var H = window.Hackflix;
+  var contentEl = document.getElementById("content");
+
+  function renderCard(item) {
+    var parts = [];
+    if (item.duration) parts.push(item.duration + " min");
+    if (item.year) parts.push(item.year);
+    if (item.conference) parts.push(H.escapeHtml(item.conference));
+    else if (item.source) parts.push(H.escapeHtml(item.source));
+
+    return '<a href="/watch/?id=' + encodeURIComponent(item.id) + '" class="movie-card">' +
+      '<img src="' + H.getThumbnailUrl(item.thumbnail, item.title) + '" alt="' + H.escapeHtml(item.title) + '" width="360" height="203" loading="lazy" />' +
+      '<div class="movie-card-overlay"><h3>' + H.escapeHtml(item.title) + '</h3><p>' + parts.join(" \u2022 ") + '</p></div></a>';
+  }
+
+  function renderContinueWatching(items) {
+    if (!items.length) return "";
+    return '<section class="carousel-row"><h2 class="carousel-title">Continuar Vendo</h2><div class="carousel-content">' +
+      items.map(function (item) {
+        return '<a href="/watch/?id=' + item.id + '" class="movie-card">' +
+          '<img src="' + H.getThumbnailUrl(item.thumbnail, item.title) + '" alt="' + H.escapeHtml(item.title) + '" width="360" height="203" loading="lazy" />' +
+          '<div class="movie-card-overlay"><h3>' + H.escapeHtml(item.title) + '</h3><p>' + item.progress + '% assistido</p></div>' +
+          '<div class="mc-progress-bar"><div class="mc-progress-fill" style="width:' + item.progress + '%"></div></div></a>';
+      }).join("") +
+      '</div></section>';
+  }
+
+  function renderCarousel(title, items, moreHref) {
+    if (!items.length) return "";
+    var visible = items.slice(0, 7);
+    return '<section class="carousel-row"><h2 class="carousel-title">' + title + '</h2><div class="carousel-content">' +
+      visible.map(function (item) { return renderCard(item); }).join("") +
+      (moreHref ? '<a href="' + moreHref + '" class="view-all-link">Ver mais \u203A</a>' : '') +
+      '</div></section>';
+  }
+
+  async function load() {
+    try {
+      var auth = await H.authenticate().catch(function () { return null; });
+      if (!auth) return;
+
+      var res = await fetch("/api/content?limit=500", { credentials: "include" });
+      if (res.status === 401) { window.location.href = "/login/"; return; }
+      var data = await res.json();
+      var items = data.items || data.content || data || [];
+
+      if (!items.length) {
+        contentEl.innerHTML = '<div class="empty"><h2>Sem conteúdo</h2><p>Execute o pipeline de ingestão para popular o conteúdo.</p></div>';
+        contentEl.classList.remove("loading");
+        return;
+      }
+
+      var featured = items[Math.floor(Math.random() * items.length)];
+      var html = '<div class="featured-hero"' + (featured.thumbnail || featured.poster ? ' style="background-image:url(' + H.escapeHtml(featured.thumbnail || featured.poster) + ');background-size:cover;background-position:center"' : '') + '>' +
+        '<div class="featured-info"><h1>' + H.escapeHtml(featured.title) + '</h1>' +
+        '<p>' + (featured.duration || '') + (featured.duration && featured.year ? ' \u2022 ' : '') + (featured.year || '') + '</p>' +
+        '<p>' + H.escapeHtml(featured.conference || featured.source || '') + '</p>' +
+        '<a href="/watch/?id=' + encodeURIComponent(featured.id) + '" class="btn btn-primary">\u25B6 Assistir</a></div></div>';
+
+      var cw = H.getContinueWatching();
+      var cwIds = new Set(cw.map(function (i) { return i.id; }));
+      var remaining = items.filter(function (i) { return !cwIds.has(i.id); });
+
+      var recent = items.slice().sort(function (a, b) {
+        return (b.updatedAt || "").localeCompare(a.updatedAt || "");
+      }).slice(0, 10);
+
+      var tagCounts = {};
+      items.forEach(function (item) {
+        (item.tags || []).forEach(function (tag) { tagCounts[tag] = (tagCounts[tag] || 0) + 1; });
+      });
+      var topTags = Object.entries(tagCounts).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 6);
+
+      html += renderContinueWatching(cw);
+      html += renderCarousel("Novas Adições", recent, "/conferences/");
+
+      topTags.forEach(function (entry) {
+        var tag = entry[0];
+        var tagged = remaining.filter(function (item) {
+          return (item.tags || []).indexOf(tag) !== -1;
+        }).slice(0, 10);
+        if (tagged.length) html += renderCarousel(tag, tagged, "/topic/?q=" + encodeURIComponent(tag));
+      });
+
+      html += renderCarousel("Todas as Palestras", remaining.slice(0, 20), "/conferences/");
+
+      contentEl.innerHTML = html;
+      contentEl.classList.remove("loading");
+    } catch (e) {
+      contentEl.innerHTML = '<div class="error-state"><h1>Failed to load</h1></div>';
+    }
+  }
+
+  load();
+})();
+  </script>
+</main>
+</body>
+</html>

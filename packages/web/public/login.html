@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Login</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+</head>
+<body>
+<div class="login-page">
+  <div class="login-card">
+    <h1>HACKFLIX</h1>
+    <p class="subtitle">Entre para acessar conteúdo premium</p>
+
+    <div class="login-form">
+      <div class="form-group">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" placeholder="Usuário" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="Senha" autocomplete="current-password">
+      </div>
+      <button id="login-btn" class="btn btn-accent">Entrar</button>
+    </div>
+
+    <div id="error" class="error-message"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var existingUser = localStorage.getItem("hackflix_user");
+  if (existingUser) { window.location.href = "/"; return; }
+
+  document.getElementById("login-btn").addEventListener("click", async function () {
+    var username = document.getElementById("username").value.trim();
+    var password = document.getElementById("password").value;
+    var errorEl = document.getElementById("error");
+
+    if (!username || !password) { errorEl.textContent = "Usuário e senha são obrigatórios"; return; }
+
+    try {
+      var res = await fetch("/api/auth/login", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: username, password: password }),
+      });
+      var data = await res.json();
+      if (!res.ok) { errorEl.textContent = data.error || "Falha no login"; return; }
+      localStorage.setItem("hackflix_user", JSON.stringify(data.user));
+      window.location.href = "/";
+    } catch (e) {
+      errorEl.textContent = "Erro de conexão";
+    }
+  });
+
+  document.getElementById("password").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") document.getElementById("login-btn").click();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.carousel-row { padding: 1rem 0; margin-left: var(--content-padding-x); }
+.carousel-title { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.carousel-content { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 1rem; scrollbar-width: none; }
+.carousel-content::-webkit-scrollbar { display: none; }
+.featured-hero { position: relative; margin: 2rem var(--content-padding-x) 0 var(--content-padding-x); border-radius: var(--border-radius-lg); overflow: hidden; min-height: 85vh; display: flex; align-items: flex-end; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+.featured-hero img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.featured-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 50%, rgba(0,0,0,0.1) 100%); z-index: 1; }
+.featured-info { position: relative; z-index: 2; padding: var(--content-padding-x); width: 100%; max-width: 600px; }
+.featured-info h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); line-height: 1.2; }
+.featured-info p { color: var(--color-text-secondary); margin-bottom: 1.5rem; font-size: 1rem; }
+.featured-info .btn { padding: 0.6rem 2rem; font-size: 1.1rem; }
+.conf-hero { padding: 1.5rem 0 1.5rem var(--content-padding-x); }
+.conf-hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }

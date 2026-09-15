@@ -1,0 +1,9 @@
+{
+  "name": "@hackflix/backoffice",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/server.js",
+    "start": "bun run src/server.js"
+  }
+}

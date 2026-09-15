@@ -1,0 +1,177 @@
+/**
+ * @module tests/e2e/movie-detail.spec
+ */
+
+import { test, expect } from "@playwright/test";
+
+test.describe("Movie Detail Page", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem("hackflix_api_key", "8fdae4d8cc6afe23d593f7956c5e991b");
+    });
+    await page.goto("/");
+    await page.waitForSelector(".movie-card", { timeout: 10000 });
+  });
+
+  test("should display movie details with title and speakers", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    const href = await card.getAttribute("href");
+    expect(href).toBeTruthy();
+
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+    await page.waitForSelector(".movie-details h1", { timeout: 10000 });
+
+    const title = page.locator(".movie-details h1");
+    await expect(title).toBeVisible();
+    await expect(title).not.toBeEmpty();
+  });
+
+  test("should display metadata row with year, duration, conference", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+    await page.waitForSelector(".meta", { timeout: 10000 });
+
+    const meta = page.locator(".meta");
+    await expect(meta).toBeVisible();
+
+    const metaText = await meta.textContent();
+    expect(metaText).toBeTruthy();
+    expect(metaText?.length).toBeGreaterThan(0);
+  });
+
+  test("should display video player or watch link", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+    await page.waitForLoadState("networkidle");
+
+    const video = page.locator(".video-container video");
+    const watchLink = page.locator(".actions a.btn-primary");
+    const hasVideo = (await video.count()) > 0;
+    const hasLink = (await watchLink.count()) > 0;
+
+    expect(hasVideo || hasLink).toBe(true);
+  });
+
+  test("should display description", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+    await page.waitForSelector(".description", { timeout: 10000 });
+
+    const description = page.locator(".description");
+    await expect(description).toBeVisible();
+  });
+
+  test("should display backdrop image", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+    await page.waitForSelector(".movie-backdrop", { timeout: 10000 });
+
+    const backdrop = page.locator(".movie-backdrop");
+    await expect(backdrop).toBeVisible();
+
+    const bgImage = await backdrop.evaluate((el) => {
+      const style = window.getComputedStyle(el);
+      return style.backgroundImage;
+    });
+    expect(bgImage).toContain("url");
+  });
+
+  test("should have back button that returns to home", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+
+    const backBtn = page.locator(".back-btn");
+    await expect(backBtn).toBeVisible();
+
+    await backBtn.click();
+    await page.waitForURL(/\//);
+    expect(page.url()).toBe("http://localhost:4321/");
+  });
+
+  test("should show error for non-existent content", async ({ page }) => {
+    await page.goto("/movie/?id=nonexistent-id");
+    await page.waitForSelector(".error", { timeout: 10000 });
+
+    const error = page.locator(".error");
+    await expect(error).toBeVisible();
+    await expect(error.locator("h2")).toContainText("Content not found");
+  });
+
+  test("should handle missing id parameter", async ({ page }) => {
+    await page.goto("/movie/");
+    await page.waitForSelector(".error", { timeout: 10000 });
+
+    const error = page.locator(".error");
+    await expect(error).toBeVisible();
+  });
+
+  test("should display tags if available", async ({ page }) => {
+    const cards = page.locator(".movie-card");
+    const count = await cards.count();
+
+    for (let i = 0; i < Math.min(count, 5); i++) {
+      const card = cards.nth(i);
+      await card.click();
+      await page.waitForURL(/\/movie\/\?id=/);
+      await page.waitForLoadState("networkidle");
+
+      const tags = page.locator(".tags .tag");
+      const tagCount = await tags.count();
+      if (tagCount > 0) {
+        return;
+      }
+
+      await page.goBack();
+      await page.waitForLoadState("networkidle");
+    }
+  });
+
+  test("movie detail should have correct padding (80px top)", async ({ page }) => {
+    const card = page.locator(".movie-card").first();
+    await card.click();
+    await page.waitForURL(/\/movie\/\?id=/);
+    await page.waitForSelector(".movie-details", { timeout: 10000 });
+
+    const details = page.locator(".movie-details");
+    const padding = await details.evaluate((el) => {
+      const style = window.getComputedStyle(el);
+      return {
+        paddingTop: parseFloat(style.paddingTop),
+        paddingLeft: style.paddingLeft,
+      };
+    });
+
+    expect(padding.paddingTop).toBeCloseTo(80, 5);
+  });
+
+  test("video player should have correct dimensions", async ({ page }) => {
+    const cards = page.locator(".movie-card");
+    const count = await cards.count();
+
+    for (let i = 0; i < Math.min(count, 10); i++) {
+      const card = cards.nth(i);
+      await card.click();
+      await page.waitForURL(/\/movie\/\?id=/);
+      await page.waitForLoadState("networkidle");
+
+      const video = page.locator(".video-container video");
+      if ((await video.count()) > 0) {
+        const videoBox = await video.boundingBox();
+        if (videoBox) {
+          expect(videoBox.width).toBeGreaterThan(0);
+          expect(videoBox.height).toBeGreaterThan(0);
+        }
+        return;
+      }
+
+      await page.goBack();
+      await page.waitForLoadState("networkidle");
+    }
+  });
+});

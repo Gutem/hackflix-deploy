@@ -1,0 +1,7 @@
+# Hackflix dev proxy — single origin HTTP
+# Usage: caddy run --config caddy/Caddyfile
+
+http://localhost:8080 {
+  reverse_proxy /api/* localhost:3001
+  reverse_proxy localhost:4321
+}

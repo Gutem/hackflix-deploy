@@ -1,0 +1,173 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: movie-detail.spec.js >> Movie Detail Page >> should display movie details with title and speakers
+- Location: tests/e2e/movie-detail.spec.js:16:7
+
+# Error details
+
+```
+TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('.movie-details h1') to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "← Back" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]: HACKFLIX
+  - main [ref=e5]:
+    - generic [ref=e7]: Loading...
+  - generic [ref=e10]:
+    - button "Menu" [ref=e11]:
+      - img [ref=e13]
+      - generic: Menu
+    - button "Inspect" [ref=e17]:
+      - img [ref=e19]
+      - generic: Inspect
+    - button "Audit" [ref=e21]:
+      - img [ref=e23]
+      - generic: Audit
+    - button "Settings" [ref=e26]:
+      - img [ref=e28]
+      - generic: Settings
+```
+
+# Test source
+
+```ts
+  1   | /**
+  2   |  * @module tests/e2e/movie-detail.spec
+  3   |  */
+  4   | 
+  5   | import { test, expect } from "@playwright/test";
+  6   | 
+  7   | test.describe("Movie Detail Page", () => {
+  8   |   test.beforeEach(async ({ page }) => {
+  9   |     await page.addInitScript(() => {
+  10  |       localStorage.setItem("hackflix_api_key", "8fdae4d8cc6afe23d593f7956c5e991b");
+  11  |     });
+  12  |     await page.goto("/");
+  13  |     await page.waitForSelector(".movie-card", { timeout: 10000 });
+  14  |   });
+  15  | 
+  16  |   test("should display movie details with title and speakers", async ({ page }) => {
+  17  |     const card = page.locator(".movie-card").first();
+  18  |     const href = await card.getAttribute("href");
+  19  |     expect(href).toBeTruthy();
+  20  | 
+  21  |     await card.click();
+  22  |     await page.waitForURL(/\/movie\/\?id=/);
+> 23  |     await page.waitForSelector(".movie-details h1", { timeout: 10000 });
+      |                ^ TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+  24  | 
+  25  |     const title = page.locator(".movie-details h1");
+  26  |     await expect(title).toBeVisible();
+  27  |     await expect(title).not.toBeEmpty();
+  28  |   });
+  29  | 
+  30  |   test("should display metadata row with year, duration, conference", async ({ page }) => {
+  31  |     const card = page.locator(".movie-card").first();
+  32  |     await card.click();
+  33  |     await page.waitForURL(/\/movie\/\?id=/);
+  34  |     await page.waitForSelector(".meta", { timeout: 10000 });
+  35  | 
+  36  |     const meta = page.locator(".meta");
+  37  |     await expect(meta).toBeVisible();
+  38  | 
+  39  |     const metaText = await meta.textContent();
+  40  |     expect(metaText).toBeTruthy();
+  41  |     expect(metaText?.length).toBeGreaterThan(0);
+  42  |   });
+  43  | 
+  44  |   test("should display video player or watch link", async ({ page }) => {
+  45  |     const card = page.locator(".movie-card").first();
+  46  |     await card.click();
+  47  |     await page.waitForURL(/\/movie\/\?id=/);
+  48  |     await page.waitForLoadState("networkidle");
+  49  | 
+  50  |     const video = page.locator(".video-container video");
+  51  |     const watchLink = page.locator(".actions a.btn-primary");
+  52  |     const hasVideo = (await video.count()) > 0;
+  53  |     const hasLink = (await watchLink.count()) > 0;
+  54  | 
+  55  |     expect(hasVideo || hasLink).toBe(true);
+  56  |   });
+  57  | 
+  58  |   test("should display description", async ({ page }) => {
+  59  |     const card = page.locator(".movie-card").first();
+  60  |     await card.click();
+  61  |     await page.waitForURL(/\/movie\/\?id=/);
+  62  |     await page.waitForSelector(".description", { timeout: 10000 });
+  63  | 
+  64  |     const description = page.locator(".description");
+  65  |     await expect(description).toBeVisible();
+  66  |   });
+  67  | 
+  68  |   test("should display backdrop image", async ({ page }) => {
+  69  |     const card = page.locator(".movie-card").first();
+  70  |     await card.click();
+  71  |     await page.waitForURL(/\/movie\/\?id=/);
+  72  |     await page.waitForSelector(".movie-backdrop", { timeout: 10000 });
+  73  | 
+  74  |     const backdrop = page.locator(".movie-backdrop");
+  75  |     await expect(backdrop).toBeVisible();
+  76  | 
+  77  |     const bgImage = await backdrop.evaluate((el) => {
+  78  |       const style = window.getComputedStyle(el);
+  79  |       return style.backgroundImage;
+  80  |     });
+  81  |     expect(bgImage).toContain("url");
+  82  |   });
+  83  | 
+  84  |   test("should have back button that returns to home", async ({ page }) => {
+  85  |     const card = page.locator(".movie-card").first();
+  86  |     await card.click();
+  87  |     await page.waitForURL(/\/movie\/\?id=/);
+  88  | 
+  89  |     const backBtn = page.locator(".back-btn");
+  90  |     await expect(backBtn).toBeVisible();
+  91  | 
+  92  |     await backBtn.click();
+  93  |     await page.waitForURL(/\//);
+  94  |     expect(page.url()).toBe("http://localhost:4321/");
+  95  |   });
+  96  | 
+  97  |   test("should show error for non-existent content", async ({ page }) => {
+  98  |     await page.goto("/movie/?id=nonexistent-id");
+  99  |     await page.waitForSelector(".error", { timeout: 10000 });
+  100 | 
+  101 |     const error = page.locator(".error");
+  102 |     await expect(error).toBeVisible();
+  103 |     await expect(error.locator("h2")).toContainText("Content not found");
+  104 |   });
+  105 | 
+  106 |   test("should handle missing id parameter", async ({ page }) => {
+  107 |     await page.goto("/movie/");
+  108 |     await page.waitForSelector(".error", { timeout: 10000 });
+  109 | 
+  110 |     const error = page.locator(".error");
+  111 |     await expect(error).toBeVisible();
+  112 |   });
+  113 | 
+  114 |   test("should display tags if available", async ({ page }) => {
+  115 |     const cards = page.locator(".movie-card");
+  116 |     const count = await cards.count();
+  117 | 
+  118 |     for (let i = 0; i < Math.min(count, 5); i++) {
+  119 |       const card = cards.nth(i);
+  120 |       await card.click();
+  121 |       await page.waitForURL(/\/movie\/\?id=/);
+  122 |       await page.waitForLoadState("networkidle");
+  123 | 
+```

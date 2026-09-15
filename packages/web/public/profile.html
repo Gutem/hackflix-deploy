@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackflix — Perfil</title>
+  <link rel="stylesheet" href="/css/global.css?v=1785940955">
+  <script src="/js/htmx.min.js?v=1785940955"></script>
+  <script src="/js/hackflix.js?v=1785940955"></script>
+  <script src="/js/i18n.js?v=1785940955"></script>
+</head>
+<body hx-boost="true" hx-target="#main" hx-select="#main" hx-swap="outerHTML">
+<header class="site-header">
+  <a href="/" class="site-logo">HACKFLIX</a>
+  <nav class="site-nav">
+    <a href="/">Início</a>
+    <a href="/conferences/">Conferências</a>
+    <a href="/documentaries/">Documentários</a>
+    <a href="/topic/">Tópicos</a>
+    <a href="/search/">Buscar</a>
+    <a href="/profile/" class="active">Perfil</a>
+  </nav>
+</header>
+
+<main id="main" class="main main-detail">
+  <div id="profile-content" class="loading">Carregando...</div>
+<script>
+(function () {
+  var profileEl = document.getElementById("profile-content");
+
+  function tierLabel(t) { return t === "admin" ? "Admin" : t === "premium" ? "Premium" : t === "basic" ? "Básico" : t; }
+  function tierBadge(t) { return '<span class="tier-badge tier-' + t + '">' + tierLabel(t) + '</span>'; }
+
+  async function load() {
+    try { await H.authenticate(); } catch { return; }
+    try {
+      var userRes = await fetch("/api/auth/verify", { credentials: "include" });
+      var user = await userRes.json();
+      if (!user || !user.id) throw new Error("No user");
+
+      var initials = (user.username || "?").slice(0, 2).toUpperCase();
+      var accessLabel = user.contentAccess === "all" ? "Tudo" : Array.isArray(user.contentAccess) ? user.contentAccess.length + " conferências" : "—";
+
+      profileEl.innerHTML =
+        '<div class="profile-hero">' +
+          '<div class="profile-avatar">' + H.escapeHtml(initials) + '</div>' +
+          '<h1>' + H.escapeHtml(user.username || "?") + '</h1>' +
+          tierBadge(user.tier) +
+        '</div>' +
+        '<div class="profile-card">' +
+          '<div class="profile-section">' +
+            '<h2>Conta</h2>' +
+            '<div class="pf-row"><span class="pf-label">Usuário</span><span>' + H.escapeHtml(user.username || "—") + '</span></div>' +
+            '<div class="pf-row"><span class="pf-label">E-mail</span><span>' + H.escapeHtml(user.email || "—") + '</span></div>' +
+            '<div class="pf-row"><span class="pf-label">Plano</span>' + tierBadge(user.tier) + '</div>' +
+            '<div class="pf-row"><span class="pf-label">Acesso</span><span>' + accessLabel + '</span></div>' +
+          '</div>' +
+          '<div class="profile-section" id="api-key-section">' +
+            '<h2>API Key</h2>' +
+            '<div class="pf-row"><span class="pf-label">Key</span><code id="key-preview" class="key-display">...</code></div>' +
+            '<button id="regen-key-btn" class="btn btn-accent" style="margin-top:0.5rem">Regenerar Key</button>' +
+            '<div id="key-result" style="margin-top:0.5rem;font-size:0.85rem"></div>' +
+          '</div>' +
+          '<div class="profile-section">' +
+            '<button id="logout-btn" class="btn btn-accent" style="width:100%;padding:0.75rem">Sair</button>' +
+          '</div>' +
+        '</div>';
+
+      // Load API key
+      try {
+        var keyRes = await fetch("/api/me/key", { credentials: "include" });
+        var keyData = await keyRes.json();
+        document.getElementById("key-preview").textContent = keyData.apiKeyPreview ? keyData.apiKeyPreview + "…" : "Nenhuma";
+      } catch {}
+
+      document.getElementById("regen-key-btn").addEventListener("click", async function () {
+        var btn = document.getElementById("regen-key-btn");
+        var resultEl = document.getElementById("key-result");
+        btn.disabled = true; btn.textContent = "Gerando...";
+        try {
+          var res = await fetch("/api/me/regenerate-key", { method: "POST", credentials: "include" });
+          var data = await res.json();
+          if (data.apiKey) {
+            document.getElementById("key-preview").textContent = data.apiKey.slice(0, 8) + "…";
+            resultEl.innerHTML = '<span style="color:var(--color-accent)">Nova key: <code style="background:#1a1a2e;padding:2px 6px;border-radius:3px;word-break:break-all">' + H.escapeHtml(data.apiKey) + '</code></span>';
+          } else {
+            resultEl.innerHTML = '<span style="color:#e50914">Falha ao gerar</span>';
+          }
+        } catch { resultEl.innerHTML = '<span style="color:#e50914">Erro de conexão</span>'; }
+        btn.disabled = false; btn.textContent = "Regenerar Key";
+      });
+
+      document.getElementById("logout-btn").addEventListener("click", async function () {
+        await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
+        localStorage.removeItem("hackflix_user");
+        window.location.href = "/login/";
+      });
+
+    } catch (e) {
+      profileEl.innerHTML = '<div class="error-state"><h1>Falha ao carregar</h1></div>';
+    }
+  }
+
+  load();
+})();
+</script></main>
+</body>
+</html>

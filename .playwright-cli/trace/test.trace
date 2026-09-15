@@ -1,0 +1,64 @@
+{"version":8,"type":"context-options","origin":"testRunner","browserName":"","playwrightVersion":"1.59.1","options":{},"platform":"darwin","wallTime":1777507336112,"monotonicTime":2459.941,"sdkLanguage":"javascript","testTimeout":30000}
+{"type":"before","callId":"hook@1","stepId":"hook@1","startTime":2466.592,"class":"Test","method":"hook","title":"Before Hooks","params":{},"stack":[]}
+{"type":"before","callId":"hook@2","stepId":"hook@2","parentId":"hook@1","startTime":2467.758,"class":"Test","method":"hook","title":"beforeEach hook","params":{},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":8,"column":8}]}
+{"type":"before","callId":"fixture@28","stepId":"fixture@28","parentId":"hook@2","startTime":2492.835,"class":"Test","method":"fixture","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@29","stepId":"pw:api@29","parentId":"fixture@28","startTime":2499.727,"class":"Test","method":"pw:api","title":"Launch browser","params":{"handleSIGINT":"false","tracesDir":"/Users/gutem/code/hackflix/test-results/.playwright-artifacts-0/traces","artifactsDir":"/Users/gutem/code/hackflix/test-results/.playwright-artifacts-0","headless":"true","ignoreDefaultArgs":"undefined","ignoreAllDefaultArgs":"false","env":"undefined","timeout":"180000"},"stack":[]}
+{"type":"after","callId":"pw:api@29","endTime":2941.019,"annotations":[]}
+{"type":"after","callId":"fixture@28","endTime":2941.216,"annotations":[]}
+{"type":"before","callId":"fixture@32","stepId":"fixture@32","parentId":"hook@2","startTime":2944.581,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@33","stepId":"pw:api@33","parentId":"fixture@32","startTime":2948.215,"class":"Test","method":"pw:api","title":"Create context","params":{"selectorEngines":"[]","testIdAttributeName":"data-testid","acceptDownloads":"accept","bypassCSP":"false","colorScheme":"light","deviceScaleFactor":"1","hasTouch":"false","ignoreHTTPSErrors":"false","isMobile":"false","javaScriptEnabled":"true","locale":"en-US","offline":"false","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.15 Safari/537.36","viewport":"Object","baseURL":"http://localhost:4321","serviceWorkers":"allow","noDefaultViewport":"false","extraHTTPHeaders":"undefined","storageState":"undefined","reducedMotion":"undefined","forcedColors":"undefined","contrast":"undefined","clientCertificates":"undefined"},"stack":[]}
+{"type":"after","callId":"pw:api@33","endTime":2963.653,"annotations":[]}
+{"type":"after","callId":"fixture@32","endTime":2971.29,"annotations":[]}
+{"type":"before","callId":"fixture@34","stepId":"fixture@34","parentId":"hook@2","startTime":2972.008,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@35","stepId":"pw:api@35","parentId":"fixture@34","startTime":2974.513,"class":"Test","method":"pw:api","title":"Create page","params":{},"stack":[]}
+{"type":"after","callId":"pw:api@35","endTime":3194.372,"annotations":[]}
+{"type":"after","callId":"fixture@34","endTime":3194.499,"annotations":[]}
+{"type":"before","callId":"pw:api@36","stepId":"pw:api@36","parentId":"hook@2","startTime":3196.733,"class":"Test","method":"pw:api","title":"Add init script","params":{"source":"(() => {\n      localStorage.setItem(\"hackflix_api_key\", \"8fdae4d8cc6afe23d593f7956c5e991b\");\n    })(undefined)"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":9,"column":5}],"group":"configuration"}
+{"type":"after","callId":"pw:api@36","endTime":3199.484,"annotations":[]}
+{"type":"before","callId":"pw:api@37","stepId":"pw:api@37","parentId":"hook@2","startTime":3201.951,"class":"Test","method":"pw:api","title":"Navigate to \"/\"","params":{"url":"/","waitUntil":"load","timeout":"0"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":12,"column":16}]}
+{"type":"after","callId":"pw:api@37","endTime":5163.716,"annotations":[]}
+{"type":"before","callId":"pw:api@38","stepId":"pw:api@38","parentId":"hook@2","startTime":5170.015,"class":"Test","method":"pw:api","title":"Wait for selector locator('.movie-card')","params":{"selector":".movie-card","timeout":"10000"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":13,"column":16}]}
+{"type":"after","callId":"pw:api@38","endTime":5246.846,"annotations":[]}
+{"type":"after","callId":"hook@2","endTime":5247.132,"annotations":[]}
+{"type":"after","callId":"hook@1","endTime":5247.648,"annotations":[]}
+{"type":"before","callId":"pw:api@39","stepId":"pw:api@39","startTime":5251.092,"class":"Test","method":"pw:api","title":"Get attribute \"href\" locator('.movie-card').first()","params":{"selector":".movie-card >> nth=0","name":"href","strict":"true","timeout":"0"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":18,"column":29}],"group":"getter"}
+{"type":"after","callId":"pw:api@39","endTime":5271.303,"annotations":[]}
+{"type":"before","callId":"expect@40","stepId":"expect@40","startTime":5274.77,"class":"Test","method":"expect","title":"Expect \"toBeTruthy\"","params":{},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":19,"column":18}]}
+{"type":"after","callId":"expect@40","endTime":5275.473,"annotations":[]}
+{"type":"before","callId":"pw:api@41","stepId":"pw:api@41","startTime":5277.667,"class":"Test","method":"pw:api","title":"Click locator('.movie-card').first()","params":{"selector":".movie-card >> nth=0","strict":"true","timeout":"0"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":21,"column":16}]}
+{"type":"after","callId":"pw:api@41","endTime":5446.64,"annotations":[]}
+{"type":"before","callId":"pw:api@42","stepId":"pw:api@42","startTime":5449.03,"class":"Test","method":"pw:api","title":"Wait for load state \"load\"","params":{"info":"Object"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":22,"column":16}]}
+{"type":"after","callId":"pw:api@42","endTime":5450.142,"annotations":[]}
+{"type":"before","callId":"pw:api@43","stepId":"pw:api@43","startTime":5451.559,"class":"Test","method":"pw:api","title":"Wait for selector locator('.movie-details h1')","params":{"selector":".movie-details h1","timeout":"10000"},"stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":23,"column":16}]}
+{"type":"after","callId":"pw:api@43","endTime":15507.31,"annotations":[],"error":{"name":"","message":"TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.movie-details h1') to be visible\u001b[22m\n","stack":"TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.movie-details h1') to be visible\u001b[22m\n\n    at /Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js:23:16"}}
+{"type":"error","message":"TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.movie-details h1') to be visible\u001b[22m\n","stack":[{"file":"/Users/gutem/code/hackflix/tests/e2e/movie-detail.spec.js","line":23,"column":16}]}
+{"type":"before","callId":"hook@44","stepId":"hook@44","startTime":15508.602,"class":"Test","method":"hook","title":"After Hooks","params":{},"stack":[]}
+{"type":"before","callId":"fixture@45","stepId":"fixture@45","parentId":"hook@44","startTime":15564.791,"class":"Test","method":"fixture","title":"Fixture \"page\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@45","endTime":15565.096,"annotations":[]}
+{"type":"before","callId":"fixture@46","stepId":"fixture@46","parentId":"hook@44","startTime":15565.617,"class":"Test","method":"fixture","title":"Fixture \"context\"","params":{},"stack":[]}
+{"type":"before","callId":"pw:api@47","stepId":"pw:api@47","parentId":"fixture@46","startTime":15733.641,"class":"Test","method":"pw:api","title":"Close context","params":{"reason":"Test ended."},"stack":[]}
+{"type":"after","callId":"pw:api@47","endTime":15742.07,"annotations":[]}
+{"type":"after","callId":"fixture@46","endTime":15742.148,"annotations":[]}
+{"type":"before","callId":"attach@ffb0fd4c5c1cd70dd532636204568a6a","stepId":"attach@ffb0fd4c5c1cd70dd532636204568a6a","startTime":15746.485,"class":"Test","method":"test.attach","title":"Attach \"error-context\"","params":{},"stack":[]}
+{"type":"after","callId":"attach@ffb0fd4c5c1cd70dd532636204568a6a","endTime":15746.506,"attachments":[{"name":"error-context","contentType":"text/markdown","sha1":"b783816a0dd2b38862657816f06ec627ce227951"}]}
+{"type":"before","callId":"fixture@52","stepId":"fixture@52","parentId":"hook@44","startTime":15748.23,"class":"Test","method":"fixture","title":"Fixture \"baseURL\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@52","endTime":15748.375,"annotations":[]}
+{"type":"before","callId":"fixture@53","stepId":"fixture@53","parentId":"hook@44","startTime":15748.843,"class":"Test","method":"fixture","title":"Fixture \"userAgent\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@53","endTime":15748.917,"annotations":[]}
+{"type":"before","callId":"fixture@55","stepId":"fixture@55","parentId":"hook@44","startTime":15749.59,"class":"Test","method":"fixture","title":"Fixture \"viewport\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@55","endTime":15749.656,"annotations":[]}
+{"type":"before","callId":"fixture@62","stepId":"fixture@62","parentId":"hook@44","startTime":15752.396,"class":"Test","method":"fixture","title":"Fixture \"isMobile\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@62","endTime":15752.603,"annotations":[]}
+{"type":"before","callId":"fixture@66","stepId":"fixture@66","parentId":"hook@44","startTime":15754.941,"class":"Test","method":"fixture","title":"Fixture \"hasTouch\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@66","endTime":15754.995,"annotations":[]}
+{"type":"before","callId":"fixture@68","stepId":"fixture@68","parentId":"hook@44","startTime":15755.612,"class":"Test","method":"fixture","title":"Fixture \"deviceScaleFactor\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@68","endTime":15755.67,"annotations":[]}
+{"type":"after","callId":"hook@44","endTime":15759.221,"attachments":[{"name":"screenshot","contentType":"image/png","sha1":"ca33bf708326a10585efb5b82b94d4ddac2e8181"}],"annotations":[]}
+{"type":"before","callId":"hook@78","stepId":"hook@78","startTime":15759.56,"class":"Test","method":"hook","title":"Worker Cleanup","params":{},"stack":[]}
+{"type":"before","callId":"fixture@82","stepId":"fixture@82","parentId":"hook@78","startTime":15761.172,"class":"Test","method":"fixture","title":"Fixture \"browser\"","params":{},"stack":[]}
+{"type":"after","callId":"fixture@82","endTime":15802.252,"annotations":[]}
+{"type":"before","callId":"fixture@86","stepId":"fixture@86","parentId":"hook@78","startTime":15803.727,"class":"Test","method":"fixture","title":"Fixture \"defaultBrowserType\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@86","endTime":15803.782,"annotations":[]}
+{"type":"before","callId":"fixture@87","stepId":"fixture@87","parentId":"hook@78","startTime":15804.01,"class":"Test","method":"fixture","title":"Fixture \"screenshot\"","params":{},"stack":[{"file":"project#chromium","line":1,"column":1}],"group":"configuration"}
+{"type":"after","callId":"fixture@87","endTime":15804.06,"annotations":[]}
+{"type":"after","callId":"hook@78","endTime":15805.758,"annotations":[]}
