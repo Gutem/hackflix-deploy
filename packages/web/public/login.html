@@ -6,8 +6,8 @@
   <title>Hackflix — Login</title>
   <link rel="stylesheet" href="/css/global.css?v=1785940955">
   <script>
-    /* TV mode bootstrap — runs before paint so there is no layout flash.
-       The login page does not load hackflix.js, so it needs its own. */
+    /* TV mode bootstrap — runs before paint so there is no layout flash,
+       and before hackflix.js reads the flag. */
     (function () {
       if (new URLSearchParams(location.search).get('tv') === '1') {
         localStorage.setItem('hackflix_tv', '1');
@@ -17,7 +17,8 @@
       }
     })();
   </script>
-  <script src="/js/tv-keyboard.js" defer></script>
+  <script src="/js/hackflix.js"></script>
+  <script src="/js/tv-keyboard.js"></script>
 </head>
 <body>
 <div class="login-page">
@@ -72,6 +73,12 @@
   document.getElementById("password").addEventListener("keydown", function (e) {
     if (e.key === "Enter") document.getElementById("login-btn").click();
   });
+
+  // TV: focus the first field so the on-screen keyboard opens without a remote tap.
+  if (document.documentElement.classList.contains("tv")) {
+    var userEl = document.getElementById("username");
+    if (userEl) userEl.focus();
+  }
 })();
 </script>
 </body>
